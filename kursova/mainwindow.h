@@ -17,6 +17,13 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void on_pbautopark_clicked();
+
+    void on_pbsupport_clicked();
+
+    void on_pbmain_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

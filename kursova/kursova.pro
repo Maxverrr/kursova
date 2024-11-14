@@ -9,14 +9,20 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    autopark.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    support.cpp
 
 HEADERS += \
-    mainwindow.h
+    autopark.h \
+    mainwindow.h \
+    support.h
 
 FORMS += \
-    mainwindow.ui
+    autopark.ui \
+    mainwindow.ui \
+    support.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
