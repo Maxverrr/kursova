@@ -1,14 +1,14 @@
 #include "support.h"
 #include "ui_support.h"
 
-support::support(QWidget *parent)
+Support::Support(QWidget *parent)
     : QDialog(parent)
-    , ui(new Ui::support)
+    , ui(new Ui::Support)
 {
     ui->setupUi(this);
 }
 
-support::~support()
+Support::~Support()
 {
     delete ui;
 }

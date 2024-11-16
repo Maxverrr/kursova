@@ -9,6 +9,9 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->stackedWidget->addWidget(new Autopark(this)); //index 1
+    ui->stackedWidget->addWidget(new Support(this)); //index 2
+
 }
 
 MainWindow::~MainWindow()
@@ -18,21 +21,22 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pbmain_clicked()
 {
-    MainWindow *dialog = new MainWindow(this);
-    dialog->show();
+    this->setStyleSheet("QMainWindow{ border-image: url(E:/kursova/mainwindow.jpeg) }");
+    ui->stackedWidget->setCurrentIndex(0);
 }
 
-void MainWindow::on_pbautopark_clicked()
+void MainWindow::on_pbAutopark_clicked()
 {
-    autopark *dialog = new autopark(this);
-    dialog->show();
+    this->setStyleSheet("QMainWindow{ border-image: '' }");
+    this->setStyleSheet("QMainWindow{ border-image: url(E:/kursova/autopark.png) }");
+    ui->stackedWidget->setCurrentIndex(1);
+
 }
 
 
 void MainWindow::on_pbsupport_clicked()
 {
-    support *dialog = new support(this);
-    dialog->show();
+   this->setStyleSheet("QMainWindow{ border-image: '' }");
+   ui->stackedWidget->setCurrentIndex(2);
 }
-
 

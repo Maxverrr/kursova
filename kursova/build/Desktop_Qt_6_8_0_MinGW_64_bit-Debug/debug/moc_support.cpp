@@ -33,16 +33,16 @@ QT_WARNING_DISABLE_GCC("-Wuseless-cast")
 namespace {
 
 #ifdef QT_MOC_HAS_STRINGDATA
-struct qt_meta_stringdata_CLASSsupportENDCLASS_t {};
-constexpr auto qt_meta_stringdata_CLASSsupportENDCLASS = QtMocHelpers::stringData(
-    "support"
+struct qt_meta_stringdata_CLASSSupportENDCLASS_t {};
+constexpr auto qt_meta_stringdata_CLASSSupportENDCLASS = QtMocHelpers::stringData(
+    "Support"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
 #endif // !QT_MOC_HAS_STRINGDATA
 } // unnamed namespace
 
-Q_CONSTINIT static const uint qt_meta_data_CLASSsupportENDCLASS[] = {
+Q_CONSTINIT static const uint qt_meta_data_CLASSSupportENDCLASS[] = {
 
  // content:
       12,       // revision
@@ -58,20 +58,20 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSsupportENDCLASS[] = {
        0        // eod
 };
 
-Q_CONSTINIT const QMetaObject support::staticMetaObject = { {
+Q_CONSTINIT const QMetaObject Support::staticMetaObject = { {
     QMetaObject::SuperData::link<QDialog::staticMetaObject>(),
-    qt_meta_stringdata_CLASSsupportENDCLASS.offsetsAndSizes,
-    qt_meta_data_CLASSsupportENDCLASS,
+    qt_meta_stringdata_CLASSSupportENDCLASS.offsetsAndSizes,
+    qt_meta_data_CLASSSupportENDCLASS,
     qt_static_metacall,
     nullptr,
-    qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSsupportENDCLASS_t,
+    qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSSupportENDCLASS_t,
         // Q_OBJECT / Q_GADGET
-        QtPrivate::TypeAndForceComplete<support, std::true_type>
+        QtPrivate::TypeAndForceComplete<Support, std::true_type>
     >,
     nullptr
 } };
 
-void support::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
+void Support::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     (void)_o;
     (void)_id;
@@ -79,20 +79,20 @@ void support::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
     (void)_a;
 }
 
-const QMetaObject *support::metaObject() const
+const QMetaObject *Support::metaObject() const
 {
     return QObject::d_ptr->metaObject ? QObject::d_ptr->dynamicMetaObject() : &staticMetaObject;
 }
 
-void *support::qt_metacast(const char *_clname)
+void *Support::qt_metacast(const char *_clname)
 {
     if (!_clname) return nullptr;
-    if (!strcmp(_clname, qt_meta_stringdata_CLASSsupportENDCLASS.stringdata0))
+    if (!strcmp(_clname, qt_meta_stringdata_CLASSSupportENDCLASS.stringdata0))
         return static_cast<void*>(this);
     return QDialog::qt_metacast(_clname);
 }
 
-int support::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+int Support::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
     _id = QDialog::qt_metacall(_c, _id, _a);
     return _id;

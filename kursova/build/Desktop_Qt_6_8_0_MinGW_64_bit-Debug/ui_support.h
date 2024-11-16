@@ -12,33 +12,43 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QDialog>
+#include <QtWidgets/QLabel>
 
 QT_BEGIN_NAMESPACE
 
-class Ui_support
+class Ui_Support
 {
 public:
+    QLabel *label;
 
-    void setupUi(QDialog *support)
+    void setupUi(QDialog *Support)
     {
-        if (support->objectName().isEmpty())
-            support->setObjectName("support");
-        support->resize(800, 450);
+        if (Support->objectName().isEmpty())
+            Support->setObjectName("Support");
+        Support->resize(800, 450);
+        label = new QLabel(Support);
+        label->setObjectName("label");
+        label->setGeometry(QRect(30, 30, 751, 391));
+        QFont font;
+        font.setPointSize(50);
+        label->setFont(font);
+        label->setLayoutDirection(Qt::LayoutDirection::LeftToRight);
 
-        retranslateUi(support);
+        retranslateUi(Support);
 
-        QMetaObject::connectSlotsByName(support);
+        QMetaObject::connectSlotsByName(Support);
     } // setupUi
 
-    void retranslateUi(QDialog *support)
+    void retranslateUi(QDialog *Support)
     {
-        support->setWindowTitle(QCoreApplication::translate("support", "Dialog", nullptr));
+        Support->setWindowTitle(QCoreApplication::translate("Support", "Dialog", nullptr));
+        label->setText(QCoreApplication::translate("Support", "              \320\220 \320\275\320\265\320\274\320\260", nullptr));
     } // retranslateUi
 
 };
 
 namespace Ui {
-    class support: public Ui_support {};
+    class Support: public Ui_Support {};
 } // namespace Ui
 
 QT_END_NAMESPACE

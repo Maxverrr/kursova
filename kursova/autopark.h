@@ -2,21 +2,30 @@
 #define AUTOPARK_H
 
 #include <QDialog>
+#include "sqlitedbmanager.h"
 
 namespace Ui {
-class autopark;
+class Autopark;
 }
 
-class autopark : public QDialog
+class Autopark : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit autopark(QWidget *parent = nullptr);
-    ~autopark();
+    explicit Autopark(QWidget *parent = nullptr);
+    ~Autopark();
+
+private slots:
+
+    void on_pbAddCar_clicked();
+    void on_pbDeleteCar_clicked();
+    void on_pbSUV_clicked();
+    void loadCars();
 
 private:
-    Ui::autopark *ui;
+    Ui::Autopark *ui;
+    SQLiteDBManager *dbManager;
 };
 
 #endif // AUTOPARK_H

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AddCarDialog</class>
+ <widget class="QDialog" name="AddCarDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>720</width>
+    <height>519</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QWidget" name="formLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>50</y>
+     <width>441</width>
+     <height>421</height>
+    </rect>
+   </property>
+   <layout class="QFormLayout" name="formLayout">
+    <item row="0" column="0">
+     <widget class="QLabel" name="label_2">
+      <property name="text">
+       <string>Навзва та модель</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="nameEdit"/>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="label_3">
+      <property name="text">
+       <string>Тип кузову</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QComboBox" name="bodyTypeCombo">
+      <item>
+       <property name="text">
+        <string>вибрати</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>SUV</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Седан</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Універсал</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Хетчбек</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="label_4">
+      <property name="text">
+       <string>Клас автомобілю</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QComboBox" name="carTypeCombo">
+      <item>
+       <property name="text">
+        <string>вибрати</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>БІзнес клас</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Стандарт</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Економ клас</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="label_5">
+      <property name="text">
+       <string>Об'єм мотору</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QLineEdit" name="engineVolumeEdit"/>
+    </item>
+    <item row="4" column="0">
+     <widget class="QLabel" name="label_6">
+      <property name="text">
+       <string>К-сть кінських сил</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QLineEdit" name="horsepowerEdit"/>
+    </item>
+    <item row="5" column="0">
+     <widget class="QLabel" name="label_7">
+      <property name="text">
+       <string>Тип палива</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="1">
+     <widget class="QComboBox" name="fuelTypeCombo">
+      <item>
+       <property name="text">
+        <string>вибрати</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Дизель</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Бензин</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="6" column="0">
+     <widget class="QLabel" name="label_8">
+      <property name="text">
+       <string>Розхід</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="1">
+     <widget class="QLineEdit" name="fuelConsumptionEdit"/>
+    </item>
+    <item row="7" column="0">
+     <widget class="QLabel" name="label_9">
+      <property name="text">
+       <string>Колір</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="1">
+     <widget class="QLineEdit" name="colorEdit"/>
+    </item>
+    <item row="8" column="0">
+     <widget class="QLabel" name="label_10">
+      <property name="text">
+       <string>Ціна за добу</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="1">
+     <widget class="QLineEdit" name="rentalPriceEdit"/>
+    </item>
+    <item row="9" column="0">
+     <widget class="QLabel" name="label_11">
+      <property name="text">
+       <string>Статус</string>
+      </property>
+     </widget>
+    </item>
+    <item row="9" column="1">
+     <widget class="QCheckBox" name="availableCheckBox">
+      <property name="text">
+       <string>CheckBox</string>
+      </property>
+     </widget>
+    </item>
+    <item row="11" column="1">
+     <widget class="QPushButton" name="pbAccepted">
+      <property name="text">
+       <string>Зберегти</string>
+      </property>
+     </widget>
+    </item>
+    <item row="10" column="1">
+     <widget class="QLabel" name="photoLabel">
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+    </item>
+    <item row="11" column="0">
+     <widget class="QPushButton" name="pbAddPhoto">
+      <property name="text">
+       <string>PushButton</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

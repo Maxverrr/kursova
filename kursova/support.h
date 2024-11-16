@@ -4,19 +4,19 @@
 #include <QDialog>
 
 namespace Ui {
-class support;
+class Support;
 }
 
-class support : public QDialog
+class Support : public QDialog
 {
     Q_OBJECT
 
 public:
-    explicit support(QWidget *parent = nullptr);
-    ~support();
+    explicit Support(QWidget *parent = nullptr);
+    ~Support();
 
 private:
-    Ui::support *ui;
+    Ui::Support *ui;
 };
 
 #endif // SUPPORT_H

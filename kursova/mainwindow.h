@@ -18,11 +18,11 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_pbautopark_clicked();
-
     void on_pbsupport_clicked();
 
     void on_pbmain_clicked();
+
+    void on_pbAutopark_clicked();
 
 private:
     Ui::MainWindow *ui;

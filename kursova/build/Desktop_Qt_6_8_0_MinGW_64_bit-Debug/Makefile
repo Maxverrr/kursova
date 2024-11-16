@@ -272,6 +272,7 @@ Makefile: ../../kursova.pro ../../../../QT/6.8.0/mingw_64/mkspecs/win32-g++/qmak
 		../../kursova.pro \
 		../../../../QT/6.8.0/mingw_64/lib/Qt6Widgets.prl \
 		../../../../QT/6.8.0/mingw_64/lib/Qt6Gui.prl \
+		../../../../QT/6.8.0/mingw_64/lib/Qt6Sql.prl \
 		../../../../QT/6.8.0/mingw_64/lib/Qt6Core.prl \
 		../../../../QT/6.8.0/mingw_64/lib/Qt6EntryPoint.prl \
 		../../../../QT/6.8.0/mingw_64/mkspecs/features/build_pass.prf
@@ -478,6 +479,7 @@ Makefile: ../../kursova.pro ../../../../QT/6.8.0/mingw_64/mkspecs/win32-g++/qmak
 ../../kursova.pro:
 ../../../../QT/6.8.0/mingw_64/lib/Qt6Widgets.prl:
 ../../../../QT/6.8.0/mingw_64/lib/Qt6Gui.prl:
+../../../../QT/6.8.0/mingw_64/lib/Qt6Sql.prl:
 ../../../../QT/6.8.0/mingw_64/lib/Qt6Core.prl:
 ../../../../QT/6.8.0/mingw_64/lib/Qt6EntryPoint.prl:
 ../../../../QT/6.8.0/mingw_64/mkspecs/features/build_pass.prf:

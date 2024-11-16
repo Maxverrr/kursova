@@ -36,10 +36,10 @@ namespace {
 struct qt_meta_stringdata_CLASSMainWindowENDCLASS_t {};
 constexpr auto qt_meta_stringdata_CLASSMainWindowENDCLASS = QtMocHelpers::stringData(
     "MainWindow",
-    "on_pbautopark_clicked",
-    "",
     "on_pbsupport_clicked",
-    "on_pbmain_clicked"
+    "",
+    "on_pbmain_clicked",
+    "on_pbAutopark_clicked"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -81,11 +81,11 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
     qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSMainWindowENDCLASS_t,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<MainWindow, std::true_type>,
-        // method 'on_pbautopark_clicked'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_pbsupport_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_pbmain_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_pbAutopark_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -97,9 +97,9 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         auto *_t = static_cast<MainWindow *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->on_pbautopark_clicked(); break;
-        case 1: _t->on_pbsupport_clicked(); break;
-        case 2: _t->on_pbmain_clicked(); break;
+        case 0: _t->on_pbsupport_clicked(); break;
+        case 1: _t->on_pbmain_clicked(); break;
+        case 2: _t->on_pbAutopark_clicked(); break;
         default: ;
         }
     }
