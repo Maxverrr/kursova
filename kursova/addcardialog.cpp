@@ -4,7 +4,7 @@
 #include <QImageReader>
 #include <QImage>
 #include <QBuffer>
-
+#include <QMessageBox>
 
 AddCarDialog::AddCarDialog(QWidget *parent) :
     QDialog(parent),
@@ -54,22 +54,47 @@ double AddCarDialog::getRentalPrice() const {
     return ui->rentalPriceEdit->text().toDouble();
 }
 
+void AddCarDialog::on_availableCheckBox_checkStateChanged(Qt::CheckState state)
+{
+    // Ваш код для обробки зміни стану чекбоксу
+}
+
 QByteArray AddCarDialog::getPhoto() const {
     return photoData;  // Повертаємо байтовий масив з фото
 }
 
 void AddCarDialog::on_pbAddPhoto_clicked() {
-    // Вибір файлу для фото
-    QString filePath = QFileDialog::getOpenFileName(this, "Select Photo", "", "Images (*.png *.jpg *.jpeg *.bmp *.gif)");
+    QString filePath = QFileDialog::getOpenFileName(this, "Select Car Photo", "", "Images (*.png *.jpg *.bmp)");
+
     if (!filePath.isEmpty()) {
-        QImage image(filePath);
-        if (!image.isNull()) {
-            // Перетворення зображення в байтовий масив
+        QFile photoFile(filePath);
+        QByteArray photoData;
+
+        // Перевірка на успішне відкриття файлу
+        if (photoFile.open(QIODevice::ReadOnly)) {
+            // Зчитуємо всі байти з файлу
+            photoData = photoFile.readAll();
+
+            // Зменшуємо розмір зображення перед збереженням в базу
+            QPixmap pixmap(filePath);
+            pixmap = pixmap.scaled(200, 200, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+
+            // Перетворюємо зменшене зображення в байтовий масив
             QBuffer buffer(&photoData);
             buffer.open(QIODevice::WriteOnly);
-            image.save(&buffer, "PNG");  // Можна зберігати в іншому форматі
-            ui->photoLabel->setPixmap(QPixmap::fromImage(image).scaled(100, 100, Qt::KeepAspectRatio));  // Відображення фото в QLabel
+            pixmap.save(&buffer, "PNG");  // Зберігаємо зображення у форматі PNG
+
+            qDebug() << "Photo data size:" << photoData.size();  // Перевірка розміру даних
+
+            this->photoData = photoData;  // Збереження фото в класі
+        } else {
+            qDebug() << "Failed to open photo file.";
         }
+
+        // Завантажуємо фото в UI (наприклад, для відображення користувачу)
+        QPixmap pixmap;
+        pixmap.loadFromData(photoData);
+        ui->photoLabel->setPixmap(pixmap.scaled(ui->photoLabel->size(), Qt::KeepAspectRatio));
     }
 }
 

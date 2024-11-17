@@ -2,11 +2,13 @@ release/addcardialog.o
 release/autopark.o
 release/main.o
 release/mainwindow.o
+release/photodelegate.o
 release/sqlitedbmanager.o
 release/support.o
 release/suv.o
 release/moc_addcardialog.o
 release/moc_autopark.o
 release/moc_mainwindow.o
+release/moc_photodelegate.o
 release/moc_support.o
 release/moc_suv.o

@@ -41,7 +41,7 @@ constexpr auto qt_meta_stringdata_CLASSAddCarDialogENDCLASS = QtMocHelpers::stri
     "on_pbAddPhoto_clicked",
     "on_availableCheckBox_checkStateChanged",
     "Qt::CheckState",
-    "arg1"
+    "state"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -89,7 +89,7 @@ Q_CONSTINIT const QMetaObject AddCarDialog::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_availableCheckBox_checkStateChanged'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        QtPrivate::TypeAndForceComplete<const Qt::CheckState &, std::false_type>
+        QtPrivate::TypeAndForceComplete<Qt::CheckState, std::false_type>
     >,
     nullptr
 } };
@@ -102,6 +102,7 @@ void AddCarDialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         switch (_id) {
         case 0: _t->on_pbAccepted_clicked(); break;
         case 1: _t->on_pbAddPhoto_clicked(); break;
+        case 2: _t->on_availableCheckBox_checkStateChanged((*reinterpret_cast< std::add_pointer_t<Qt::CheckState>>(_a[1]))); break;
         default: ;
         }
     }

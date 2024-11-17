@@ -8,6 +8,8 @@
 #include <QImage>
 #include <QPixmap>
 #include <QStyledItemDelegate>
+#include "PhotoDelegate.h"
+#include <QLabel>
 
 
 Autopark::Autopark(QWidget *parent) :
@@ -36,23 +38,38 @@ void Autopark::loadCars()
     model->setTable("cars");
     model->select();
 
-    // Створення делегата для відображення фото
-    QStyledItemDelegate *delegate = new QStyledItemDelegate(this);
-    connect(delegate, &QStyledItemDelegate::paint, this, [this](QPainter *painter, const QStyleOptionViewItem &option, const QModelIndex &index) {
-        if (index.isValid()) {
-            QByteArray photoData = index.data(Qt::DisplayRole).toByteArray();
-            if (!photoData.isEmpty()) {
-                QImage image;
-                image.loadFromData(photoData);
-                QPixmap pixmap = QPixmap::fromImage(image).scaled(option.rect.size(), Qt::KeepAspectRatio);
-                painter->drawPixmap(option.rect, pixmap);
+    // Налаштування відображення моделі
+    ui->carTableView->setModel(model);
+
+    // Приховуємо колонку з id
+    ui->carTableView->setColumnHidden(0, true);
+
+    // Обробка кожного ряду для відображення фотографій
+    for (int row = 0; row < model->rowCount(); ++row) {
+        QByteArray photoData = model->data(model->index(row, 10)).toByteArray(); // Отримуємо дані фото з бази
+
+        if (!photoData.isEmpty()) {
+            QPixmap pixmap;
+
+            // Перевіряємо, чи є дійсні байтові дані зображення
+            if (pixmap.loadFromData(photoData)) {
+                // Масштабуємо зображення до потрібного розміру
+                pixmap = pixmap.scaled(100, 100, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+
+                // Створюємо QLabel і встановлюємо в нього зображення
+                QLabel *photoLabel = new QLabel();
+                photoLabel->setPixmap(pixmap);
+
+                // Встановлюємо QLabel в таблицю на відповідну позицію
+                ui->carTableView->setIndexWidget(model->index(row, 10), photoLabel);
+            } else {
+                // Якщо зображення не вдалося завантажити, можна поставити за замовчуванням якусь картинку
+                QLabel *photoLabel = new QLabel();
+                photoLabel->setText("No Image"); // Текст у разі відсутності зображення
+                ui->carTableView->setIndexWidget(model->index(row, 10), photoLabel);
             }
         }
-    });
-
-    ui->carTableView->setItemDelegateForColumn(10, delegate);  // Номер стовпця з фото
-
-    ui->carTableView->setModel(model);
+    }
 }
 
 
@@ -70,9 +87,10 @@ void Autopark::on_pbAddCar_clicked()
         double fuelConsumption = dialog.getFuelConsumption();
         QString color = dialog.getColor();
         double rentalPrice = dialog.getRentalPrice();
+        QByteArray photoData = dialog.getPhoto();  // Отримуємо фото з діалогу
 
         // Додаємо новий автомобіль в базу даних
-        if (dbManager->addCar(name, bodyType, carType, engineVolume, horsePower, fuelType, fuelConsumption, color, rentalPrice)) {
+        if (dbManager->addCar(name, bodyType, carType, engineVolume, horsePower, fuelType, fuelConsumption, color, rentalPrice, true, photoData)) {
             QMessageBox::information(this, "Успіх", "Автомобіль успішно додано!");
             loadCars();  // Оновлюємо таблицю
         } else {
@@ -80,6 +98,7 @@ void Autopark::on_pbAddCar_clicked()
         }
     }
 }
+
 
 
 void Autopark::on_pbDeleteCar_clicked()
@@ -93,7 +112,7 @@ void Autopark::on_pbDeleteCar_clicked()
 
     int row = selectedIndexes.first().row();
     QSqlTableModel *model = static_cast<QSqlTableModel*>(ui->carTableView->model());
-    QString carName = model->data(model->index(row, 1)).toString();  // Припускаємо, що друга колонка - це ім'я автомобіля
+    QString carName = model->data(model->   index(row, 1)).toString();  // Припускаємо, що друга колонка - це ім'я автомобіля
 
     // Видаляємо автомобіль за іменем
     if (dbManager->removeCar(carName)) {

@@ -13,6 +13,7 @@ SOURCES += \
     autopark.cpp \
     main.cpp \
     mainwindow.cpp \
+    photodelegate.cpp \
     sqlitedbmanager.cpp \
     support.cpp \
     suv.cpp
@@ -21,6 +22,7 @@ HEADERS += \
     addcardialog.h \
     autopark.h \
     mainwindow.h \
+    photodelegate.h \
     sqlitedbmanager.h \
     support.h \
     suv.h

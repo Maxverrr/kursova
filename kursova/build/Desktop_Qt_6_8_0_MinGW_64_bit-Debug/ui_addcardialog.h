@@ -15,17 +15,17 @@
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QFormLayout>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_AddCarDialog
 {
 public:
-    QWidget *formLayoutWidget;
+    QGridLayout *gridLayout;
     QFormLayout *formLayout;
     QLabel *label_2;
     QLineEdit *nameEdit;
@@ -47,37 +47,35 @@ public:
     QLineEdit *rentalPriceEdit;
     QLabel *label_11;
     QCheckBox *availableCheckBox;
+    QPushButton *pbAddPhoto;
     QPushButton *pbAccepted;
     QLabel *photoLabel;
-    QPushButton *pbAddPhoto;
 
     void setupUi(QDialog *AddCarDialog)
     {
         if (AddCarDialog->objectName().isEmpty())
             AddCarDialog->setObjectName("AddCarDialog");
         AddCarDialog->resize(720, 519);
-        formLayoutWidget = new QWidget(AddCarDialog);
-        formLayoutWidget->setObjectName("formLayoutWidget");
-        formLayoutWidget->setGeometry(QRect(90, 50, 441, 421));
-        formLayout = new QFormLayout(formLayoutWidget);
+        gridLayout = new QGridLayout(AddCarDialog);
+        gridLayout->setObjectName("gridLayout");
+        formLayout = new QFormLayout();
         formLayout->setObjectName("formLayout");
-        formLayout->setContentsMargins(0, 0, 0, 0);
-        label_2 = new QLabel(formLayoutWidget);
+        label_2 = new QLabel(AddCarDialog);
         label_2->setObjectName("label_2");
 
         formLayout->setWidget(0, QFormLayout::LabelRole, label_2);
 
-        nameEdit = new QLineEdit(formLayoutWidget);
+        nameEdit = new QLineEdit(AddCarDialog);
         nameEdit->setObjectName("nameEdit");
 
         formLayout->setWidget(0, QFormLayout::FieldRole, nameEdit);
 
-        label_3 = new QLabel(formLayoutWidget);
+        label_3 = new QLabel(AddCarDialog);
         label_3->setObjectName("label_3");
 
         formLayout->setWidget(1, QFormLayout::LabelRole, label_3);
 
-        bodyTypeCombo = new QComboBox(formLayoutWidget);
+        bodyTypeCombo = new QComboBox(AddCarDialog);
         bodyTypeCombo->addItem(QString());
         bodyTypeCombo->addItem(QString());
         bodyTypeCombo->addItem(QString());
@@ -87,12 +85,12 @@ public:
 
         formLayout->setWidget(1, QFormLayout::FieldRole, bodyTypeCombo);
 
-        label_4 = new QLabel(formLayoutWidget);
+        label_4 = new QLabel(AddCarDialog);
         label_4->setObjectName("label_4");
 
         formLayout->setWidget(2, QFormLayout::LabelRole, label_4);
 
-        carTypeCombo = new QComboBox(formLayoutWidget);
+        carTypeCombo = new QComboBox(AddCarDialog);
         carTypeCombo->addItem(QString());
         carTypeCombo->addItem(QString());
         carTypeCombo->addItem(QString());
@@ -101,32 +99,32 @@ public:
 
         formLayout->setWidget(2, QFormLayout::FieldRole, carTypeCombo);
 
-        label_5 = new QLabel(formLayoutWidget);
+        label_5 = new QLabel(AddCarDialog);
         label_5->setObjectName("label_5");
 
         formLayout->setWidget(3, QFormLayout::LabelRole, label_5);
 
-        engineVolumeEdit = new QLineEdit(formLayoutWidget);
+        engineVolumeEdit = new QLineEdit(AddCarDialog);
         engineVolumeEdit->setObjectName("engineVolumeEdit");
 
         formLayout->setWidget(3, QFormLayout::FieldRole, engineVolumeEdit);
 
-        label_6 = new QLabel(formLayoutWidget);
+        label_6 = new QLabel(AddCarDialog);
         label_6->setObjectName("label_6");
 
         formLayout->setWidget(4, QFormLayout::LabelRole, label_6);
 
-        horsepowerEdit = new QLineEdit(formLayoutWidget);
+        horsepowerEdit = new QLineEdit(AddCarDialog);
         horsepowerEdit->setObjectName("horsepowerEdit");
 
         formLayout->setWidget(4, QFormLayout::FieldRole, horsepowerEdit);
 
-        label_7 = new QLabel(formLayoutWidget);
+        label_7 = new QLabel(AddCarDialog);
         label_7->setObjectName("label_7");
 
         formLayout->setWidget(5, QFormLayout::LabelRole, label_7);
 
-        fuelTypeCombo = new QComboBox(formLayoutWidget);
+        fuelTypeCombo = new QComboBox(AddCarDialog);
         fuelTypeCombo->addItem(QString());
         fuelTypeCombo->addItem(QString());
         fuelTypeCombo->addItem(QString());
@@ -134,60 +132,63 @@ public:
 
         formLayout->setWidget(5, QFormLayout::FieldRole, fuelTypeCombo);
 
-        label_8 = new QLabel(formLayoutWidget);
+        label_8 = new QLabel(AddCarDialog);
         label_8->setObjectName("label_8");
 
         formLayout->setWidget(6, QFormLayout::LabelRole, label_8);
 
-        fuelConsumptionEdit = new QLineEdit(formLayoutWidget);
+        fuelConsumptionEdit = new QLineEdit(AddCarDialog);
         fuelConsumptionEdit->setObjectName("fuelConsumptionEdit");
 
         formLayout->setWidget(6, QFormLayout::FieldRole, fuelConsumptionEdit);
 
-        label_9 = new QLabel(formLayoutWidget);
+        label_9 = new QLabel(AddCarDialog);
         label_9->setObjectName("label_9");
 
         formLayout->setWidget(7, QFormLayout::LabelRole, label_9);
 
-        colorEdit = new QLineEdit(formLayoutWidget);
+        colorEdit = new QLineEdit(AddCarDialog);
         colorEdit->setObjectName("colorEdit");
 
         formLayout->setWidget(7, QFormLayout::FieldRole, colorEdit);
 
-        label_10 = new QLabel(formLayoutWidget);
+        label_10 = new QLabel(AddCarDialog);
         label_10->setObjectName("label_10");
 
         formLayout->setWidget(8, QFormLayout::LabelRole, label_10);
 
-        rentalPriceEdit = new QLineEdit(formLayoutWidget);
+        rentalPriceEdit = new QLineEdit(AddCarDialog);
         rentalPriceEdit->setObjectName("rentalPriceEdit");
 
         formLayout->setWidget(8, QFormLayout::FieldRole, rentalPriceEdit);
 
-        label_11 = new QLabel(formLayoutWidget);
+        label_11 = new QLabel(AddCarDialog);
         label_11->setObjectName("label_11");
 
         formLayout->setWidget(9, QFormLayout::LabelRole, label_11);
 
-        availableCheckBox = new QCheckBox(formLayoutWidget);
+        availableCheckBox = new QCheckBox(AddCarDialog);
         availableCheckBox->setObjectName("availableCheckBox");
 
         formLayout->setWidget(9, QFormLayout::FieldRole, availableCheckBox);
 
-        pbAccepted = new QPushButton(formLayoutWidget);
+        pbAddPhoto = new QPushButton(AddCarDialog);
+        pbAddPhoto->setObjectName("pbAddPhoto");
+
+        formLayout->setWidget(11, QFormLayout::LabelRole, pbAddPhoto);
+
+        pbAccepted = new QPushButton(AddCarDialog);
         pbAccepted->setObjectName("pbAccepted");
 
         formLayout->setWidget(11, QFormLayout::FieldRole, pbAccepted);
 
-        photoLabel = new QLabel(formLayoutWidget);
+        photoLabel = new QLabel(AddCarDialog);
         photoLabel->setObjectName("photoLabel");
 
         formLayout->setWidget(10, QFormLayout::FieldRole, photoLabel);
 
-        pbAddPhoto = new QPushButton(formLayoutWidget);
-        pbAddPhoto->setObjectName("pbAddPhoto");
 
-        formLayout->setWidget(11, QFormLayout::LabelRole, pbAddPhoto);
+        gridLayout->addLayout(formLayout, 0, 0, 1, 1);
 
 
         retranslateUi(AddCarDialog);
@@ -224,9 +225,9 @@ public:
         label_10->setText(QCoreApplication::translate("AddCarDialog", "\320\246\321\226\320\275\320\260 \320\267\320\260 \320\264\320\276\320\261\321\203", nullptr));
         label_11->setText(QCoreApplication::translate("AddCarDialog", "\320\241\321\202\320\260\321\202\321\203\321\201", nullptr));
         availableCheckBox->setText(QCoreApplication::translate("AddCarDialog", "CheckBox", nullptr));
+        pbAddPhoto->setText(QCoreApplication::translate("AddCarDialog", "PushButton", nullptr));
         pbAccepted->setText(QCoreApplication::translate("AddCarDialog", "\320\227\320\261\320\265\321\200\320\265\320\263\321\202\320\270", nullptr));
         photoLabel->setText(QCoreApplication::translate("AddCarDialog", "TextLabel", nullptr));
-        pbAddPhoto->setText(QCoreApplication::translate("AddCarDialog", "PushButton", nullptr));
     } // retranslateUi
 
 };

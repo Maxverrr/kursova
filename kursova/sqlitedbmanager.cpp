@@ -79,6 +79,8 @@ bool SQLiteDBManager::addCar(const QString &name, const QString &bodyType, const
                              double engineVolume, int horsepower, const QString &fuelType,
                              double fuelConsumption, const QString &color, double rentalPrice, bool isAvailable, const QByteArray &photo)
 {
+    qDebug() << "Inserting photo with size:" << photo.size();  // Перевірка розміру фото
+
     QSqlQuery query;
     query.prepare(R"(
         INSERT INTO Cars (name, bodyType, carType, engineVolume, horsepower, fuelType, fuelConsumption, color, rentalPrice, isAvailable, photo)
@@ -105,6 +107,9 @@ bool SQLiteDBManager::addCar(const QString &name, const QString &bodyType, const
     qDebug() << "Car added successfully";
     return true;
 }
+
+
+
 
 bool SQLiteDBManager::removeCar(const QString &carName)
 {

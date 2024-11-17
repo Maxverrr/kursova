@@ -29,8 +29,7 @@ public:
 private slots:
     void on_pbAccepted_clicked();
     void on_pbAddPhoto_clicked();
-
-    void on_availableCheckBox_checkStateChanged(const Qt::CheckState &arg1);
+    void on_availableCheckBox_checkStateChanged(Qt::CheckState state);
 
 private:
     Ui::AddCarDialog *ui;
