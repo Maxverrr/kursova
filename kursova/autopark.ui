@@ -106,12 +106,25 @@
     <rect>
      <x>300</x>
      <y>270</y>
-     <width>80</width>
+     <width>101</width>
      <height>24</height>
     </rect>
    </property>
    <property name="text">
-    <string>PushButton</string>
+    <string>Очистити таблицю</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pbAll">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>20</y>
+     <width>80</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Всі автомобілі</string>
    </property>
   </widget>
  </widget>

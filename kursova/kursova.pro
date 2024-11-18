@@ -14,23 +14,20 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     sqlitedbmanager.cpp \
-    support.cpp \
-    suv.cpp
+    support.cpp
 
 HEADERS += \
     addcardialog.h \
     autopark.h \
     mainwindow.h \
     sqlitedbmanager.h \
-    support.h \
-    suv.h
+    support.h
 
 FORMS += \
     addcardialog.ui \
     autopark.ui \
     mainwindow.ui \
-    support.ui \
-    suv.ui
+    support.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

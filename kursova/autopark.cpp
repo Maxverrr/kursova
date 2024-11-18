@@ -106,3 +106,25 @@ void Autopark::on_pbResetTable_clicked() {
     QMessageBox::information(this, "Успіх", "Таблиця Cars успішно скинута!");
     loadCars();
 }
+
+void Autopark::on_pbAll_clicked() {
+    // Отримуємо модель, підключену до carTableView
+    QSqlTableModel *model = static_cast<QSqlTableModel*>(ui->carTableView->model());
+
+    // Перевіряємо, чи модель існує
+    if (model) {
+        // Скидаємо фільтр
+        model->setFilter("");
+        model->select();
+    } else {
+        // Якщо моделі немає, створюємо нову
+        model = new QSqlTableModel(this, dbManager->getDB());
+        model->setTable("Cars");
+        model->select();
+
+        // Призначаємо модель таблиці
+        ui->carTableView->setModel(model);
+    }
+}
+
+

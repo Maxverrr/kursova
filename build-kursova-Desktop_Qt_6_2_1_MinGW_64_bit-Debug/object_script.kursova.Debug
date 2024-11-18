@@ -1,0 +1,10 @@
+debug/addcardialog.o
+debug/autopark.o
+debug/main.o
+debug/mainwindow.o
+debug/sqlitedbmanager.o
+debug/support.o
+debug/moc_addcardialog.o
+debug/moc_autopark.o
+debug/moc_mainwindow.o
+debug/moc_support.o
