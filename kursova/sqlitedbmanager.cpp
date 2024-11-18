@@ -37,8 +37,6 @@ bool SQLiteDBManager::connectToDataBase() {
     return true;
 }
 
-
-
 void SQLiteDBManager::closeDataBase() {
     if (db.isOpen()) {
         db.close();
@@ -61,8 +59,7 @@ bool SQLiteDBManager::createTables() {
             fuelConsumption REAL,
             color TEXT,
             rentalPrice REAL,
-            isAvailable INTEGER,
-            photo BLOB
+            isAvailable TEXT
         )
     )";
 
@@ -77,27 +74,34 @@ bool SQLiteDBManager::createTables() {
 
 bool SQLiteDBManager::addCar(const QString &name, const QString &bodyType, const QString &carType,
                              double engineVolume, int horsepower, const QString &fuelType,
-                             double fuelConsumption, const QString &color, double rentalPrice, bool isAvailable, const QByteArray &photo)
+                             double fuelConsumption, const QString &color, double rentalPrice, const QString &isAvailable)
 {
-    qDebug() << "Inserting photo with size:" << photo.size();  // Перевірка розміру фото
+    if (name.isEmpty() || bodyType == "вибрати" || carType == "вибрати" || fuelType == "вибрати" || isAvailable == "вибрати" ||color.isEmpty()) {
+        qWarning() << "Invalid car data provided.";
+        return false;
+    }
 
     QSqlQuery query;
     query.prepare(R"(
-        INSERT INTO Cars (name, bodyType, carType, engineVolume, horsepower, fuelType, fuelConsumption, color, rentalPrice, isAvailable, photo)
-        VALUES (:name, :bodyType, :carType, :engineVolume, :horsepower, :fuelType, :fuelConsumption, :color, :rentalPrice, :isAvailable, :photo)
+        INSERT INTO Cars (name, bodyType, carType, engineVolume, horsepower, fuelType, fuelConsumption, color, rentalPrice, isAvailable)
+        VALUES (:name, :bodyType, :carType, :engineVolume, :horsepower, :fuelType, :fuelConsumption, :color, :rentalPrice, :isAvailable)
     )");
 
-    query.bindValue(":name", name);
-    query.bindValue(":bodyType", bodyType);
-    query.bindValue(":carType", carType);
-    query.bindValue(":engineVolume", engineVolume);
-    query.bindValue(":horsepower", horsepower);
-    query.bindValue(":fuelType", fuelType);
-    query.bindValue(":fuelConsumption", fuelConsumption);
-    query.bindValue(":color", color);
-    query.bindValue(":rentalPrice", rentalPrice);
+    query.bindValue(":name", name);  // Приклад: "1"
+    query.bindValue(":bodyType", bodyType);  // Приклад: "Універсал"
+    query.bindValue(":carType", carType);  // Приклад: "Економ клас"
+    query.bindValue(":engineVolume", engineVolume);  // Приклад: 1 (REAL)
+    query.bindValue(":horsepower", horsepower);  // Приклад: 1 (INTEGER)
+    query.bindValue(":fuelType", fuelType);  // Приклад: "Дизель"
+    query.bindValue(":fuelConsumption", fuelConsumption);  // Приклад: 1 (REAL)
+    query.bindValue(":color", color);  // Приклад: "blue"
+    query.bindValue(":rentalPrice", rentalPrice);  // Приклад: 1 (REAL)
     query.bindValue(":isAvailable", isAvailable);
-    query.bindValue(":photo", photo);
+
+    qDebug() << "Inserting car with values:"
+             << name << bodyType << carType << engineVolume
+             << horsepower << fuelType << fuelConsumption
+             << color << rentalPrice << isAvailable;
 
     if (!query.exec()) {
         qWarning() << "Failed to insert car data:" << query.lastError().text();
@@ -110,12 +114,10 @@ bool SQLiteDBManager::addCar(const QString &name, const QString &bodyType, const
 
 
 
-
 bool SQLiteDBManager::removeCar(const QString &carName)
 {
     QSqlQuery query;
 
-    // Видаляємо автомобіль за ім'ям
     query.prepare("DELETE FROM Cars WHERE name = :car_name");
     query.bindValue(":car_name", carName);
     if (!query.exec()) {
@@ -124,6 +126,20 @@ bool SQLiteDBManager::removeCar(const QString &carName)
     }
 
     qDebug() << "Car deleted successfully";
+    return true;
+}
+
+bool SQLiteDBManager::dropTable(const QString &tableName) {
+    QSqlQuery query(db);
+    QString dropTableQuery = QString("DROP TABLE IF EXISTS %1").arg(tableName);
+
+    if (!query.exec(dropTableQuery)) {
+        qWarning() << "Failed to drop table:" << tableName
+                   << query.lastError().text();
+        return false;
+    }
+
+    qDebug() << "Table" << tableName << "dropped successfully!";
     return true;
 }
 

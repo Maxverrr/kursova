@@ -37,11 +37,7 @@ struct qt_meta_stringdata_CLASSAddCarDialogENDCLASS_t {};
 constexpr auto qt_meta_stringdata_CLASSAddCarDialogENDCLASS = QtMocHelpers::stringData(
     "AddCarDialog",
     "on_pbAccepted_clicked",
-    "",
-    "on_pbAddPhoto_clicked",
-    "on_availableCheckBox_checkStateChanged",
-    "Qt::CheckState",
-    "state"
+    ""
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -54,7 +50,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSAddCarDialogENDCLASS[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-       3,   14, // methods
+       1,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -62,14 +58,10 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSAddCarDialogENDCLASS[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   32,    2, 0x08,    1 /* Private */,
-       3,    0,   33,    2, 0x08,    2 /* Private */,
-       4,    1,   34,    2, 0x08,    3 /* Private */,
+       1,    0,   20,    2, 0x08,    1 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void, 0x80000000 | 5,    6,
 
        0        // eod
 };
@@ -84,12 +76,7 @@ Q_CONSTINIT const QMetaObject AddCarDialog::staticMetaObject = { {
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<AddCarDialog, std::true_type>,
         // method 'on_pbAccepted_clicked'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_pbAddPhoto_clicked'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_availableCheckBox_checkStateChanged'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        QtPrivate::TypeAndForceComplete<Qt::CheckState, std::false_type>
+        QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
 } };
@@ -101,11 +88,10 @@ void AddCarDialog::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         (void)_t;
         switch (_id) {
         case 0: _t->on_pbAccepted_clicked(); break;
-        case 1: _t->on_pbAddPhoto_clicked(); break;
-        case 2: _t->on_availableCheckBox_checkStateChanged((*reinterpret_cast< std::add_pointer_t<Qt::CheckState>>(_a[1]))); break;
         default: ;
         }
     }
+    (void)_a;
 }
 
 const QMetaObject *AddCarDialog::metaObject() const
@@ -127,13 +113,13 @@ int AddCarDialog::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 3)
+        if (_id < 1)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 3;
+        _id -= 1;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 3)
+        if (_id < 1)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 3;
+        _id -= 1;
     }
     return _id;
 }

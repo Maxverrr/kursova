@@ -22,7 +22,7 @@ private slots:
     void on_pbDeleteCar_clicked();
     void on_pbSUV_clicked();
     void loadCars();
-
+    void on_pbResetTable_clicked();
 private:
     Ui::Autopark *ui;
     SQLiteDBManager *dbManager;

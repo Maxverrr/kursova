@@ -1,9 +1,5 @@
 #include "addcardialog.h"
 #include "ui_addcardialog.h"
-#include <QFileDialog>
-#include <QImageReader>
-#include <QImage>
-#include <QBuffer>
 #include <QMessageBox>
 
 AddCarDialog::AddCarDialog(QWidget *parent) :
@@ -54,53 +50,11 @@ double AddCarDialog::getRentalPrice() const {
     return ui->rentalPriceEdit->text().toDouble();
 }
 
-void AddCarDialog::on_availableCheckBox_checkStateChanged(Qt::CheckState state)
-{
-    // Ваш код для обробки зміни стану чекбоксу
-}
-
-QByteArray AddCarDialog::getPhoto() const {
-    return photoData;  // Повертаємо байтовий масив з фото
-}
-
-void AddCarDialog::on_pbAddPhoto_clicked() {
-    QString filePath = QFileDialog::getOpenFileName(this, "Select Car Photo", "", "Images (*.png *.jpg *.bmp)");
-
-    if (!filePath.isEmpty()) {
-        QFile photoFile(filePath);
-        QByteArray photoData;
-
-        // Перевірка на успішне відкриття файлу
-        if (photoFile.open(QIODevice::ReadOnly)) {
-            // Зчитуємо всі байти з файлу
-            photoData = photoFile.readAll();
-
-            // Зменшуємо розмір зображення перед збереженням в базу
-            QPixmap pixmap(filePath);
-            pixmap = pixmap.scaled(200, 200, Qt::KeepAspectRatio, Qt::SmoothTransformation);
-
-            // Перетворюємо зменшене зображення в байтовий масив
-            QBuffer buffer(&photoData);
-            buffer.open(QIODevice::WriteOnly);
-            pixmap.save(&buffer, "PNG");  // Зберігаємо зображення у форматі PNG
-
-            qDebug() << "Photo data size:" << photoData.size();  // Перевірка розміру даних
-
-            this->photoData = photoData;  // Збереження фото в класі
-        } else {
-            qDebug() << "Failed to open photo file.";
-        }
-
-        // Завантажуємо фото в UI (наприклад, для відображення користувачу)
-        QPixmap pixmap;
-        pixmap.loadFromData(photoData);
-        ui->photoLabel->setPixmap(pixmap.scaled(ui->photoLabel->size(), Qt::KeepAspectRatio));
-    }
+QString AddCarDialog::getIsAvailable() const {
+    return ui->availableCombo->currentText();
 }
 
 void AddCarDialog::on_pbAccepted_clicked()
 {
     accept();
 }
-
-

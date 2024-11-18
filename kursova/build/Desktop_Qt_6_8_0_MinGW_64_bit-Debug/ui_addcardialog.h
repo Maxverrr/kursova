@@ -11,7 +11,6 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QDialog>
 #include <QtWidgets/QFormLayout>
@@ -46,10 +45,8 @@ public:
     QLabel *label_10;
     QLineEdit *rentalPriceEdit;
     QLabel *label_11;
-    QCheckBox *availableCheckBox;
-    QPushButton *pbAddPhoto;
     QPushButton *pbAccepted;
-    QLabel *photoLabel;
+    QComboBox *availableCombo;
 
     void setupUi(QDialog *AddCarDialog)
     {
@@ -167,25 +164,18 @@ public:
 
         formLayout->setWidget(9, QFormLayout::LabelRole, label_11);
 
-        availableCheckBox = new QCheckBox(AddCarDialog);
-        availableCheckBox->setObjectName("availableCheckBox");
-
-        formLayout->setWidget(9, QFormLayout::FieldRole, availableCheckBox);
-
-        pbAddPhoto = new QPushButton(AddCarDialog);
-        pbAddPhoto->setObjectName("pbAddPhoto");
-
-        formLayout->setWidget(11, QFormLayout::LabelRole, pbAddPhoto);
-
         pbAccepted = new QPushButton(AddCarDialog);
         pbAccepted->setObjectName("pbAccepted");
 
-        formLayout->setWidget(11, QFormLayout::FieldRole, pbAccepted);
+        formLayout->setWidget(10, QFormLayout::FieldRole, pbAccepted);
 
-        photoLabel = new QLabel(AddCarDialog);
-        photoLabel->setObjectName("photoLabel");
+        availableCombo = new QComboBox(AddCarDialog);
+        availableCombo->addItem(QString());
+        availableCombo->addItem(QString());
+        availableCombo->addItem(QString());
+        availableCombo->setObjectName("availableCombo");
 
-        formLayout->setWidget(10, QFormLayout::FieldRole, photoLabel);
+        formLayout->setWidget(9, QFormLayout::FieldRole, availableCombo);
 
 
         gridLayout->addLayout(formLayout, 0, 0, 1, 1);
@@ -209,7 +199,7 @@ public:
 
         label_4->setText(QCoreApplication::translate("AddCarDialog", "\320\232\320\273\320\260\321\201 \320\260\320\262\321\202\320\276\320\274\320\276\320\261\321\226\320\273\321\216", nullptr));
         carTypeCombo->setItemText(0, QCoreApplication::translate("AddCarDialog", "\320\262\320\270\320\261\321\200\320\260\321\202\320\270", nullptr));
-        carTypeCombo->setItemText(1, QCoreApplication::translate("AddCarDialog", "\320\221\320\206\320\267\320\275\320\265\321\201 \320\272\320\273\320\260\321\201", nullptr));
+        carTypeCombo->setItemText(1, QCoreApplication::translate("AddCarDialog", "\320\221\321\226\320\267\320\275\320\265\321\201 \320\272\320\273\320\260\321\201", nullptr));
         carTypeCombo->setItemText(2, QCoreApplication::translate("AddCarDialog", "\320\241\321\202\320\260\320\275\320\264\320\260\321\200\321\202", nullptr));
         carTypeCombo->setItemText(3, QCoreApplication::translate("AddCarDialog", "\320\225\320\272\320\276\320\275\320\276\320\274 \320\272\320\273\320\260\321\201", nullptr));
 
@@ -224,10 +214,11 @@ public:
         label_9->setText(QCoreApplication::translate("AddCarDialog", "\320\232\320\276\320\273\321\226\321\200", nullptr));
         label_10->setText(QCoreApplication::translate("AddCarDialog", "\320\246\321\226\320\275\320\260 \320\267\320\260 \320\264\320\276\320\261\321\203", nullptr));
         label_11->setText(QCoreApplication::translate("AddCarDialog", "\320\241\321\202\320\260\321\202\321\203\321\201", nullptr));
-        availableCheckBox->setText(QCoreApplication::translate("AddCarDialog", "CheckBox", nullptr));
-        pbAddPhoto->setText(QCoreApplication::translate("AddCarDialog", "PushButton", nullptr));
         pbAccepted->setText(QCoreApplication::translate("AddCarDialog", "\320\227\320\261\320\265\321\200\320\265\320\263\321\202\320\270", nullptr));
-        photoLabel->setText(QCoreApplication::translate("AddCarDialog", "TextLabel", nullptr));
+        availableCombo->setItemText(0, QCoreApplication::translate("AddCarDialog", "\320\262\320\270\320\261\321\200\320\260\321\202\320\270", nullptr));
+        availableCombo->setItemText(1, QCoreApplication::translate("AddCarDialog", "\320\224\320\276\321\201\321\202\321\203\320\277\320\275\320\270\320\271", nullptr));
+        availableCombo->setItemText(2, QCoreApplication::translate("AddCarDialog", "\320\235\320\265\320\264\320\276\321\201\321\202\321\203\320\277\320\275\320\270\320\271", nullptr));
+
     } // retranslateUi
 
 };

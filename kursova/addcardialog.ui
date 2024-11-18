@@ -78,7 +78,7 @@
        </item>
        <item>
         <property name="text">
-         <string>БІзнес клас</string>
+         <string>Бізнес клас</string>
         </property>
        </item>
        <item>
@@ -176,32 +176,30 @@
        </property>
       </widget>
      </item>
-     <item row="9" column="1">
-      <widget class="QCheckBox" name="availableCheckBox">
-       <property name="text">
-        <string>CheckBox</string>
-       </property>
-      </widget>
-     </item>
-     <item row="11" column="0">
-      <widget class="QPushButton" name="pbAddPhoto">
-       <property name="text">
-        <string>PushButton</string>
-       </property>
-      </widget>
-     </item>
-     <item row="11" column="1">
+     <item row="10" column="1">
       <widget class="QPushButton" name="pbAccepted">
        <property name="text">
         <string>Зберегти</string>
        </property>
       </widget>
      </item>
-     <item row="10" column="1">
-      <widget class="QLabel" name="photoLabel">
-       <property name="text">
-        <string>TextLabel</string>
-       </property>
+     <item row="9" column="1">
+      <widget class="QComboBox" name="availableCombo">
+       <item>
+        <property name="text">
+         <string>вибрати</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Доступний</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Недоступний</string>
+        </property>
+       </item>
       </widget>
      </item>
     </layout>

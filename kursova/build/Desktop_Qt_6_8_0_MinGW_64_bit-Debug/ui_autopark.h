@@ -28,6 +28,7 @@ public:
     QPushButton *pushButton_2;
     QPushButton *pbSUV;
     QTableView *carTableView;
+    QPushButton *pbResetTable;
 
     void setupUi(QDialog *Autopark)
     {
@@ -55,6 +56,9 @@ public:
         carTableView = new QTableView(Autopark);
         carTableView->setObjectName("carTableView");
         carTableView->setGeometry(QRect(0, 0, 501, 271));
+        pbResetTable = new QPushButton(Autopark);
+        pbResetTable->setObjectName("pbResetTable");
+        pbResetTable->setGeometry(QRect(300, 270, 80, 24));
 
         retranslateUi(Autopark);
 
@@ -70,6 +74,7 @@ public:
         pushButton_3->setText(QCoreApplication::translate("Autopark", "PushButton", nullptr));
         pushButton_2->setText(QCoreApplication::translate("Autopark", "PushButton", nullptr));
         pbSUV->setText(QCoreApplication::translate("Autopark", "SUV", nullptr));
+        pbResetTable->setText(QCoreApplication::translate("Autopark", "PushButton", nullptr));
     } // retranslateUi
 
 };
