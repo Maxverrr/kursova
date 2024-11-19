@@ -35,8 +35,10 @@ public:
     QSpacerItem *horizontalSpacer_5;
     QPushButton *pbAutopark;
     QSpacerItem *horizontalSpacer_3;
+    QPushButton *pushButton;
     QSpacerItem *horizontalSpacer;
     QPushButton *pushButton_2;
+    QSpacerItem *horizontalSpacer_4;
     QVBoxLayout *verticalLayout;
     QStackedWidget *stackedWidget;
     QWidget *page;
@@ -49,10 +51,11 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(800, 450);
+        MainWindow->resize(1200, 675);
         MainWindow->setStyleSheet(QString::fromUtf8("QMainWindow{\n"
 "	border-image: url(E:/kursova/mainwindow.jpeg);\n"
-"}"));
+"}\n"
+""));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         gridLayout = new QGridLayout(centralwidget);
@@ -67,7 +70,7 @@ public:
         sizePolicy.setVerticalStretch(5);
         sizePolicy.setHeightForWidth(label->sizePolicy().hasHeightForWidth());
         label->setSizePolicy(sizePolicy);
-        label->setMinimumSize(QSize(100, 60));
+        label->setMinimumSize(QSize(91, 57));
         label->setMaximumSize(QSize(100, 100));
         label->setSizeIncrement(QSize(0, 0));
         label->setBaseSize(QSize(32, 18));
@@ -84,6 +87,9 @@ public:
 
         pbmain = new QPushButton(centralwidget);
         pbmain->setObjectName("pbmain");
+        pbmain->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 0);\n"
+"font: 900 14pt \"Arial Black\";\n"
+"color: rgb(255, 255, 255);"));
 
         horizontalLayout->addWidget(pbmain);
 
@@ -93,6 +99,9 @@ public:
 
         pbAutopark = new QPushButton(centralwidget);
         pbAutopark->setObjectName("pbAutopark");
+        pbAutopark->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 0);\n"
+"font: 900 14pt \"Arial Black\";\n"
+"color: rgb(255, 255, 255);"));
 
         horizontalLayout->addWidget(pbAutopark);
 
@@ -100,17 +109,32 @@ public:
 
         horizontalLayout->addItem(horizontalSpacer_3);
 
+        pushButton = new QPushButton(centralwidget);
+        pushButton->setObjectName("pushButton");
+        pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 0);\n"
+"font: 900 14pt \"Arial Black\";\n"
+"color: rgb(255, 255, 255);"));
+
+        horizontalLayout->addWidget(pushButton);
+
         horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Policy::Expanding, QSizePolicy::Policy::Minimum);
 
         horizontalLayout->addItem(horizontalSpacer);
 
         pushButton_2 = new QPushButton(centralwidget);
         pushButton_2->setObjectName("pushButton_2");
+        pushButton_2->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 0, 0);\n"
+"font: 900 14pt \"Arial Black\";\n"
+"color: rgb(255, 255, 255);"));
 
         horizontalLayout->addWidget(pushButton_2);
 
+        horizontalSpacer_4 = new QSpacerItem(30, 20, QSizePolicy::Policy::Fixed, QSizePolicy::Policy::Minimum);
 
-        gridLayout->addLayout(horizontalLayout, 0, 0, 1, 1);
+        horizontalLayout->addItem(horizontalSpacer_4);
+
+
+        gridLayout->addLayout(horizontalLayout, 0, 1, 1, 1);
 
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName("verticalLayout");
@@ -126,7 +150,7 @@ public:
         verticalLayout->addWidget(stackedWidget);
 
 
-        gridLayout->addLayout(verticalLayout, 1, 0, 1, 1);
+        gridLayout->addLayout(verticalLayout, 1, 1, 1, 1);
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName("horizontalLayout_2");
@@ -158,7 +182,7 @@ public:
         horizontalLayout_2->addWidget(pbsupport);
 
 
-        gridLayout->addLayout(horizontalLayout_2, 2, 0, 1, 1);
+        gridLayout->addLayout(horizontalLayout_2, 2, 1, 1, 1);
 
         MainWindow->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(MainWindow);
@@ -179,7 +203,8 @@ public:
         label->setText(QString());
         pbmain->setText(QCoreApplication::translate("MainWindow", "\320\223\320\276\320\273\320\276\320\262\320\275\320\260", nullptr));
         pbAutopark->setText(QCoreApplication::translate("MainWindow", "\320\220\320\262\321\202\320\276\320\277\320\260\321\200\320\272", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
+        pushButton->setText(QCoreApplication::translate("MainWindow", "\320\243\320\274\320\276\320\262\320\270 \320\276\321\200\320\265\320\275\320\264\320\270", nullptr));
+        pushButton_2->setText(QCoreApplication::translate("MainWindow", "\320\222\321\226\320\264\320\263\321\203\320\272\320\270", nullptr));
         pbsupport->setText(QCoreApplication::translate("MainWindow", "\320\242\320\265\321\205.\320\237\321\226\320\264\321\202\321\200\320\270\320\274\320\272\320\260", nullptr));
     } // retranslateUi
 

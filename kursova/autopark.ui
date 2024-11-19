@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>780</width>
-    <height>298</height>
+    <width>1180</width>
+    <height>523</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,7 +16,7 @@
   <widget class="QPushButton" name="pbAddCar">
    <property name="geometry">
     <rect>
-     <x>30</x>
+     <x>10</x>
      <y>270</y>
      <width>80</width>
      <height>24</height>
@@ -29,7 +29,7 @@
   <widget class="QPushButton" name="pbDeleteCar">
    <property name="geometry">
     <rect>
-     <x>130</x>
+     <x>240</x>
      <y>270</y>
      <width>80</width>
      <height>24</height>
@@ -42,7 +42,7 @@
   <widget class="QPushButton" name="pushButton_4">
    <property name="geometry">
     <rect>
-     <x>660</x>
+     <x>1070</x>
      <y>50</y>
      <width>80</width>
      <height>24</height>
@@ -55,7 +55,7 @@
   <widget class="QPushButton" name="pushButton_3">
    <property name="geometry">
     <rect>
-     <x>540</x>
+     <x>900</x>
      <y>100</y>
      <width>80</width>
      <height>24</height>
@@ -68,7 +68,7 @@
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
-     <x>660</x>
+     <x>1070</x>
      <y>100</y>
      <width>80</width>
      <height>24</height>
@@ -81,7 +81,7 @@
   <widget class="QPushButton" name="pbSUV">
    <property name="geometry">
     <rect>
-     <x>540</x>
+     <x>900</x>
      <y>50</y>
      <width>80</width>
      <height>24</height>
@@ -94,19 +94,19 @@
   <widget class="QTableView" name="carTableView">
    <property name="geometry">
     <rect>
-     <x>0</x>
+     <x>10</x>
      <y>0</y>
-     <width>501</width>
-     <height>271</height>
+     <width>881</width>
+     <height>261</height>
     </rect>
    </property>
   </widget>
   <widget class="QPushButton" name="pbResetTable">
    <property name="geometry">
     <rect>
-     <x>300</x>
+     <x>780</x>
      <y>270</y>
-     <width>101</width>
+     <width>113</width>
      <height>24</height>
     </rect>
    </property>
@@ -117,14 +117,50 @@
   <widget class="QPushButton" name="pbAll">
    <property name="geometry">
     <rect>
-     <x>610</x>
-     <y>20</y>
-     <width>80</width>
-     <height>21</height>
+     <x>900</x>
+     <y>0</y>
+     <width>87</width>
+     <height>24</height>
     </rect>
    </property>
    <property name="text">
     <string>Всі автомобілі</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pbOrderCar">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>500</y>
+     <width>80</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Замовити</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pbResetClientsTable">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>490</y>
+     <width>181</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Очистити твблицю з клієнтами</string>
+   </property>
+  </widget>
+  <widget class="QTableView" name="clientsTableView">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>300</y>
+     <width>641</width>
+     <height>191</height>
+    </rect>
    </property>
   </widget>
  </widget>

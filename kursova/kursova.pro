@@ -10,6 +10,7 @@ CONFIG += c++17
 
 SOURCES += \
     addcardialog.cpp \
+    addclientdialog.cpp \
     autopark.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -18,6 +19,7 @@ SOURCES += \
 
 HEADERS += \
     addcardialog.h \
+    addclientdialog.h \
     autopark.h \
     mainwindow.h \
     sqlitedbmanager.h \
@@ -25,6 +27,7 @@ HEADERS += \
 
 FORMS += \
     addcardialog.ui \
+    addclientdialog.ui \
     autopark.ui \
     mainwindow.ui \
     support.ui

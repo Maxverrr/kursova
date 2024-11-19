@@ -46,7 +46,7 @@ public:
     QLineEdit *rentalPriceEdit;
     QLabel *label_11;
     QPushButton *pbAccepted;
-    QComboBox *availableCombo;
+    QLabel *availableLable;
 
     void setupUi(QDialog *AddCarDialog)
     {
@@ -169,13 +169,10 @@ public:
 
         formLayout->setWidget(10, QFormLayout::FieldRole, pbAccepted);
 
-        availableCombo = new QComboBox(AddCarDialog);
-        availableCombo->addItem(QString());
-        availableCombo->addItem(QString());
-        availableCombo->addItem(QString());
-        availableCombo->setObjectName("availableCombo");
+        availableLable = new QLabel(AddCarDialog);
+        availableLable->setObjectName("availableLable");
 
-        formLayout->setWidget(9, QFormLayout::FieldRole, availableCombo);
+        formLayout->setWidget(9, QFormLayout::FieldRole, availableLable);
 
 
         gridLayout->addLayout(formLayout, 0, 0, 1, 1);
@@ -215,10 +212,7 @@ public:
         label_10->setText(QCoreApplication::translate("AddCarDialog", "\320\246\321\226\320\275\320\260 \320\267\320\260 \320\264\320\276\320\261\321\203", nullptr));
         label_11->setText(QCoreApplication::translate("AddCarDialog", "\320\241\321\202\320\260\321\202\321\203\321\201", nullptr));
         pbAccepted->setText(QCoreApplication::translate("AddCarDialog", "\320\227\320\261\320\265\321\200\320\265\320\263\321\202\320\270", nullptr));
-        availableCombo->setItemText(0, QCoreApplication::translate("AddCarDialog", "\320\262\320\270\320\261\321\200\320\260\321\202\320\270", nullptr));
-        availableCombo->setItemText(1, QCoreApplication::translate("AddCarDialog", "\320\224\320\276\321\201\321\202\321\203\320\277\320\275\320\270\320\271", nullptr));
-        availableCombo->setItemText(2, QCoreApplication::translate("AddCarDialog", "\320\235\320\265\320\264\320\276\321\201\321\202\321\203\320\277\320\275\320\270\320\271", nullptr));
-
+        availableLable->setText(QCoreApplication::translate("AddCarDialog", "\320\224\320\276\321\201\321\202\321\203\320\277\320\275\320\276", nullptr));
     } // retranslateUi
 
 };

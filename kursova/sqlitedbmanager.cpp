@@ -48,7 +48,8 @@ QSqlDatabase SQLiteDBManager::getDB() const {
 }
 
 bool SQLiteDBManager::createTables() {
-    QString createTableQuery = R"(
+    // Створення таблиці для автомобілів
+    QString createCarsTableQuery = R"(
         CREATE TABLE IF NOT EXISTS Cars (
             name TEXT PRIMARY KEY,
             bodyType TEXT,
@@ -64,11 +65,30 @@ bool SQLiteDBManager::createTables() {
     )";
 
     QSqlQuery query(db);
-    if (!query.exec(createTableQuery)) {
+    if (!query.exec(createCarsTableQuery)) {
         qDebug() << "Failed to create Cars table:" << query.lastError().text();
         return false;
     }
-    qDebug() << "Cars table created successfully";
+
+    // Створення таблиці для клієнтів
+    QString createClientsTableQuery = R"(
+        CREATE TABLE IF NOT EXISTS Clients (
+            phoneNumber TEXT PRIMARY KEY,
+            email TEXT,
+            firstName TEXT,
+            surname TEXT,
+            middleName TEXT,
+            rentedCarName TEXT,
+            FOREIGN KEY (rentedCarName) REFERENCES Cars(name)
+        )
+    )";
+
+    if (!query.exec(createClientsTableQuery)) {
+        qDebug() << "Failed to create Clients table:" << query.lastError().text();
+        return false;
+    }
+
+    qDebug() << "Tables created successfully";
     return true;
 }
 
@@ -76,7 +96,7 @@ bool SQLiteDBManager::addCar(const QString &name, const QString &bodyType, const
                              double engineVolume, int horsepower, const QString &fuelType,
                              double fuelConsumption, const QString &color, double rentalPrice, const QString &isAvailable)
 {
-    if (name.isEmpty() || bodyType == "вибрати" || carType == "вибрати" || fuelType == "вибрати" || isAvailable == "вибрати" ||color.isEmpty()) {
+    if (name.isEmpty() || bodyType == "вибрати" || carType == "вибрати" || fuelType == "вибрати" || color.isEmpty()) {
         qWarning() << "Invalid car data provided.";
         return false;
     }
@@ -140,6 +160,50 @@ bool SQLiteDBManager::dropTable(const QString &tableName) {
     }
 
     qDebug() << "Table" << tableName << "dropped successfully!";
+    return true;
+}
+
+bool SQLiteDBManager::addClient(const QString &phoneNumber, const QString &email, const QString &firstName,
+                                const QString &surname, const QString &middleName, const QString &rentedCarName) {
+    if (phoneNumber.isEmpty() || email.isEmpty() || firstName.isEmpty() || surname.isEmpty() || rentedCarName.isEmpty()) {
+        qWarning() << "Invalid client data provided.";
+        return false;
+    }
+
+    QSqlQuery query;
+    query.prepare(R"(
+        INSERT INTO Clients (phoneNumber, email, firstName, surname, middleName, rentedCarName)
+        VALUES (:phoneNumber, :email, :firstName, :surname, :middleName, :rentedCarName)
+    )");
+
+    query.bindValue(":phoneNumber", phoneNumber);
+    query.bindValue(":email", email);
+    query.bindValue(":firstName", firstName);
+    query.bindValue(":surname", surname);
+    query.bindValue(":middleName", middleName);
+    query.bindValue(":rentedCarName", rentedCarName);
+
+    if (!query.exec()) {
+        qWarning() << "Failed to insert client data:" << query.lastError().text();
+        return false;
+    }
+
+    // Оновлюємо статус доступності автомобіля
+    return updateCarAvailability(rentedCarName, "Недоступний");
+}
+
+bool SQLiteDBManager::updateCarAvailability(const QString &carName, const QString &availability) {
+    QSqlQuery query;
+    query.prepare("UPDATE Cars SET isAvailable = :availability WHERE name = :carName");
+    query.bindValue(":carName", carName);
+    query.bindValue(":availability", availability);
+
+    if (!query.exec()) {
+        qWarning() << "Failed to update car availability:" << query.lastError().text();
+        return false;
+    }
+
+    qDebug() << "Car availability updated successfully";
     return true;
 }
 

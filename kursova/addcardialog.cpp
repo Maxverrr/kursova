@@ -51,7 +51,7 @@ double AddCarDialog::getRentalPrice() const {
 }
 
 QString AddCarDialog::getIsAvailable() const {
-    return ui->availableCombo->currentText();
+    return ui->availableLable->text();
 }
 
 void AddCarDialog::on_pbAccepted_clicked()
