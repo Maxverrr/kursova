@@ -1,10 +1,20 @@
-#include "SQLiteDBManager.h"
+#include "sqlitedbmanager.h"
 #include <QSqlQuery>
 #include <QSqlError>
 #include <QDebug>
 #include <QThread>
 
-SQLiteDBManager::SQLiteDBManager(const QString &databasePath) : databasePath(databasePath) {}
+SQLiteDBManager* SQLiteDBManager::instance = nullptr;
+
+// Метод для отримання екземпляру даного класу (патерн Singleton)
+SQLiteDBManager* SQLiteDBManager::getInstance() {
+    if (SQLiteDBManager::instance == nullptr) {
+        SQLiteDBManager::instance = new SQLiteDBManager("db.sqlite");
+    }
+    return instance;
+}
+
+SQLiteDBManager::SQLiteDBManager(const QString databasePath) : databasePath(databasePath) {}
 
 SQLiteDBManager::~SQLiteDBManager() {
     closeDataBase();
@@ -43,7 +53,7 @@ void SQLiteDBManager::closeDataBase() {
     }
 }
 
-QSqlDatabase SQLiteDBManager::getDB() const {
+QSqlDatabase &SQLiteDBManager::getDB() {
     return db;
 }
 
@@ -51,6 +61,7 @@ bool SQLiteDBManager::createTables() {
     // Створення таблиці для автомобілів
     QString createCarsTableQuery = R"(
         CREATE TABLE IF NOT EXISTS Cars (
+
             name TEXT PRIMARY KEY,
             bodyType TEXT,
             carType TEXT,

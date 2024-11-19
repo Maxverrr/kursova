@@ -6,12 +6,15 @@
 
 class SQLiteDBManager {
 public:
-    explicit SQLiteDBManager(const QString &databasePath = "");
     ~SQLiteDBManager();
+
+    // Метод для отримання екземпляру даного класу (патерн Singleton)
+    static SQLiteDBManager* getInstance();
+
 
     bool connectToDataBase();
     void closeDataBase();
-    QSqlDatabase getDB() const;
+    QSqlDatabase& getDB();
 
     bool createTables();
     bool addCar(const QString &name, const QString &bodyType, const QString &carType,
@@ -28,8 +31,10 @@ public:
 
 
 private:
+    static SQLiteDBManager* instance;
     QSqlDatabase db;
     QString databasePath;
+    explicit SQLiteDBManager(const QString databasePath = "");
 };
 
 #endif // SQLITEDBMANAGER_H

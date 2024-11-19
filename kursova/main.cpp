@@ -3,7 +3,7 @@
 #include <QApplication>
 #include <QSqlDatabase>
 #include <QDebug>
-#include "SQLiteDBManager.h"
+#include "sqlitedbmanager.h"
 
 // Функція для перевірки драйвера SQLite
 void checkSQLiteDriver() {
@@ -22,8 +22,8 @@ int main(int argc, char *argv[]) {
     checkSQLiteDriver();
 
     // Ваш код для роботи з базою даних
-    SQLiteDBManager dbManager;
-    dbManager.connectToDataBase();
+    SQLiteDBManager* dbManager = SQLiteDBManager::getInstance();
+    dbManager->connectToDataBase();
 
     MainWindow w;
     w.show();

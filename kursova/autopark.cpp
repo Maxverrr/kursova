@@ -11,14 +11,14 @@ Autopark::Autopark(QWidget *parent) :
     ui(new Ui::Autopark)
 {
     ui->setupUi(this);
+    this->dbManager = SQLiteDBManager::getInstance();
 
-    dbManager = new SQLiteDBManager();
     loadCars();
+    loadClients();
 }
 
 Autopark::~Autopark()
 {
-    delete dbManager;
     delete ui;
 }
 

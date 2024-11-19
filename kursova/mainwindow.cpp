@@ -21,14 +21,14 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pbmain_clicked()
 {
-    this->setStyleSheet("QMainWindow{ border-image: url(E:/kursova/mainwindow.jpeg) }");
+    this->setStyleSheet("QMainWindow{ border-image: url(D:/KN321/MaxBrydun/kursova/mainwindow.jpeg) }");
     ui->stackedWidget->setCurrentIndex(0);
 }
 
 void MainWindow::on_pbAutopark_clicked()
 {
     this->setStyleSheet("QMainWindow{ border-image: '' }");
-    this->setStyleSheet("QMainWindow{ border-image: url(E:/kursova/autopark.png) }");
+    this->setStyleSheet("QMainWindow{ border-image: url(D:/KN321/MaxBrydun/kursova/autopark.png) }");
     ui->stackedWidget->setCurrentIndex(1);
 
 }
