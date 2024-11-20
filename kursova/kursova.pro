@@ -14,6 +14,7 @@ SOURCES += \
     autopark.cpp \
     main.cpp \
     mainwindow.cpp \
+    rules.cpp \
     sqlitedbmanager.cpp \
     support.cpp
 
@@ -22,6 +23,7 @@ HEADERS += \
     addclientdialog.h \
     autopark.h \
     mainwindow.h \
+    rules.h \
     sqlitedbmanager.h \
     support.h
 
@@ -30,6 +32,7 @@ FORMS += \
     addclientdialog.ui \
     autopark.ui \
     mainwindow.ui \
+    rules.ui \
     support.ui
 
 # Default rules for deployment.

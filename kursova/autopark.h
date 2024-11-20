@@ -27,6 +27,14 @@ private slots:
     void on_pbResetClientsTable_clicked();
     void on_pbAll_clicked();
     void on_pbOrderCar_clicked();
+    void on_pbShowClients_clicked();
+
+    void on_pbSedan_clicked();
+
+    void on_pbBiznes_clicked();
+
+    void on_pbEco_clicked();
+
 private:
     Ui::Autopark *ui;
     SQLiteDBManager *dbManager;

@@ -24,6 +24,8 @@ private slots:
 
     void on_pbAutopark_clicked();
 
+    void on_pbRules_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

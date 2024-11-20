@@ -5,6 +5,7 @@
 #include "sqlitedbmanager.h"
 #include <QSqlTableModel>
 #include <QMessageBox>
+#include <QInputDialog>
 
 Autopark::Autopark(QWidget *parent) :
     QDialog(parent),
@@ -83,37 +84,7 @@ void Autopark::on_pbDeleteCar_clicked()
     }
 }
 
-void Autopark::on_pbSUV_clicked() {
-    // Отримуємо модель, підключену до QTableView
-    QSqlTableModel *model = new QSqlTableModel(this, dbManager->getDB());
-    model->setTable("Cars");
-
-    // Встановлюємо фільтр за типом кузову SUV
-    model->setFilter("bodyType = 'SUV'");
-    model->select();
-
-    // Налаштовуємо таблицю для відображення відфільтрованих даних
-    ui->carTableView->setModel(model);
-}
-
-
-void Autopark::on_pbResetTable_clicked()
-{
-    int response = QMessageBox::question(this, "Підтвердження", "Ви впевнені, що хочете скинути таблицю?",
-                                         QMessageBox::Yes | QMessageBox::No);
-    if (response == QMessageBox::Yes) {
-        if (!dbManager->dropTable("Cars")) {
-            QMessageBox::warning(this, "Помилка", "Не вдалося видалити таблицю Cars.");
-            return;
-        }
-        if (!dbManager->createTables()) {
-            QMessageBox::critical(this, "Помилка", "Не вдалося створити таблицю Cars заново.");
-            return;
-        }
-        QMessageBox::information(this, "Успіх", "Таблиця Cars успішно скинута!");
-        loadCars();
-    }
-}
+// Фыльтри
 
 void Autopark::on_pbAll_clicked() {
     // Отримуємо модель, підключену до carTableView
@@ -135,6 +106,68 @@ void Autopark::on_pbAll_clicked() {
     }
 }
 
+void Autopark::on_pbSUV_clicked() {
+    // Отримуємо модель, підключену до QTableView
+    QSqlTableModel *model = new QSqlTableModel(this, dbManager->getDB());
+    model->setTable("Cars");
+
+    // Встановлюємо фільтр за типом кузову SUV
+    model->setFilter("bodyType = 'SUV'");
+    model->select();
+
+    // Налаштовуємо таблицю для відображення відфільтрованих даних
+    ui->carTableView->setModel(model);
+}
+
+void Autopark::on_pbSedan_clicked(){
+    QSqlTableModel *model = new QSqlTableModel(this, dbManager->getDB());
+    model->setTable("Cars");
+
+    model->setFilter("bodyType = 'Седан'");
+    model->select();
+
+    ui->carTableView->setModel(model);
+}
+
+void Autopark::on_pbBiznes_clicked(){
+    QSqlTableModel *model = new QSqlTableModel(this, dbManager->getDB());
+    model->setTable("Cars");
+
+    model->setFilter("carType = 'Бізнес клас'");
+    model->select();
+
+    ui->carTableView->setModel(model);
+}
+
+
+void Autopark::on_pbEco_clicked(){
+    QSqlTableModel *model = new QSqlTableModel(this, dbManager->getDB());
+    model->setTable("Cars");
+
+    model->setFilter("carType = 'Економ клас'");
+    model->select();
+
+    ui->carTableView->setModel(model);
+}
+
+void Autopark::on_pbResetTable_clicked()
+{
+    int response = QMessageBox::question(this, "Підтвердження", "Ви впевнені, що хочете скинути таблицю?",
+                                         QMessageBox::Yes | QMessageBox::No);
+    if (response == QMessageBox::Yes) {
+        if (!dbManager->dropTable("Cars")) {
+            QMessageBox::warning(this, "Помилка", "Не вдалося видалити таблицю Cars.");
+            return;
+        }
+        if (!dbManager->createTables()) {
+            QMessageBox::critical(this, "Помилка", "Не вдалося створити таблицю Cars заново.");
+            return;
+        }
+        QMessageBox::information(this, "Успіх", "Таблиця Cars успішно скинута!");
+        loadCars();
+    }
+}
+
 void Autopark::loadClients()
 {
     QSqlTableModel *model = new QSqlTableModel(this, dbManager->getDB());
@@ -144,11 +177,7 @@ void Autopark::loadClients()
     // Задати стратегію для заборони редагування
     model->setEditStrategy(QSqlTableModel::OnManualSubmit);
 
-    // Встановлюємо таблицю для перегляду
-    ui->clientsTableView->setModel(model);
 
-    // Забороняємо редагування
-    ui->clientsTableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
 }
 
 void Autopark::on_pbOrderCar_clicked() {
@@ -196,8 +225,52 @@ void Autopark::on_pbOrderCar_clicked() {
     }
 }
 
+void Autopark::on_pbShowClients_clicked() {
+    // Виведення діалогу введення пароля
+    bool ok;
+    QString password = QInputDialog::getText(this, "Введіть пароль",
+                                             "Пароль:", QLineEdit::Password,
+                                             "", &ok);
+
+    // Перевірка правильності пароля
+    if (!ok || password != "admin") {
+        QMessageBox::warning(this, "Помилка", "Невірний пароль!");
+        return;
+    }
+
+    // Відображення таблиці клієнтів у новому вікні
+    QDialog *clientsDialog = new QDialog(this);
+    clientsDialog->setWindowTitle("Таблиця клієнтів");
+    clientsDialog->resize(800, 600);
+
+    QTableView *clientsView = new QTableView(clientsDialog);
+    clientsView->setGeometry(10, 10, 780, 580);
+
+    // Завантажуємо дані в таблицю
+    QSqlTableModel *model = new QSqlTableModel(this, dbManager->getDB());
+    model->setTable("Clients");
+    model->select();
+    model->setEditStrategy(QSqlTableModel::OnManualSubmit);
+
+    clientsView->setModel(model);
+    clientsView->setEditTriggers(QAbstractItemView::NoEditTriggers);
+
+    clientsDialog->exec();
+    delete clientsDialog;
+}
 
 void Autopark::on_pbResetClientsTable_clicked() {
+    bool ok;
+    QString password = QInputDialog::getText(this, "Введіть пароль",
+                                             "Пароль:", QLineEdit::Password,
+                                             "", &ok);
+
+    // Перевірка правильності пароля
+    if (!ok || password != "admin") {
+        QMessageBox::warning(this, "Помилка", "Невірний пароль!");
+        return;
+    }
+
     int response = QMessageBox::question(this, "Підтвердження", "Ви впевнені, що хочете скинути таблицю?",
                                          QMessageBox::Yes | QMessageBox::No);
     if (response == QMessageBox::Yes) {

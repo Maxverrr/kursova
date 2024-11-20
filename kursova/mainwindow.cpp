@@ -3,6 +3,7 @@
 #include <QPixmap>
 #include "autopark.h"
 #include "support.h"
+#include "rules.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -11,7 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     ui->stackedWidget->addWidget(new Autopark(this)); //index 1
     ui->stackedWidget->addWidget(new Support(this)); //index 2
-
+    ui->stackedWidget->addWidget(new Rules(this)); //index 3
 }
 
 MainWindow::~MainWindow()
@@ -21,14 +22,14 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pbmain_clicked()
 {
-    this->setStyleSheet("QMainWindow{ border-image: url(D:/KN321/MaxBrydun/kursova/mainwindow.jpeg) }");
+    this->setStyleSheet("QMainWindow{ border-image: url(E:/kursova/mainwindow.jpg) }");
     ui->stackedWidget->setCurrentIndex(0);
 }
 
 void MainWindow::on_pbAutopark_clicked()
 {
     this->setStyleSheet("QMainWindow{ border-image: '' }");
-    this->setStyleSheet("QMainWindow{ border-image: url(D:/KN321/MaxBrydun/kursova/autopark.png) }");
+    this->setStyleSheet("QMainWindow{ border-image: url(E:/kursova/autopark.png) }");
     ui->stackedWidget->setCurrentIndex(1);
 
 }
@@ -36,7 +37,15 @@ void MainWindow::on_pbAutopark_clicked()
 
 void MainWindow::on_pbsupport_clicked()
 {
-   this->setStyleSheet("QMainWindow{ border-image: '' }");
+   this->setStyleSheet("QMainWindow{ border-image: url(E:/kursova/support.jpg) }");
    ui->stackedWidget->setCurrentIndex(2);
+}
+
+
+void MainWindow::on_pbRules_clicked()
+{
+    this->setStyleSheet("QMainWindow{ border-image: '' }");
+    this->setStyleSheet("QMainWindow{ border-image: url(E:/kursova/rules.jpg) }");
+    ui->stackedWidget->setCurrentIndex(3);
 }
 

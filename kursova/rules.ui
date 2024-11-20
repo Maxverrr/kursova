@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Rules</class>
+ <widget class="QDialog" name="Rules">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1250</width>
+    <height>565</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout">
+   <item row="0" column="0">
+    <widget class="QScrollArea" name="scrollArea">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1216</width>
+        <height>1026</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QLabel" name="label">
+         <property name="styleSheet">
+          <string notr="true">font: 700 15pt &quot;Segoe UI&quot;;
+color: rgb(0, 0, 0);</string>
+         </property>
+         <property name="text">
+          <string>Умови прокату</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_2">
+         <property name="styleSheet">
+          <string notr="true">font: 12pt &quot;Segoe UI&quot;;
+color: qlineargradient(spread:pad, x1:0.453, y1:0.46, x2:1, y2:1, stop:0 rgba(0, 0, 0, 255), stop:0.403315 rgba(255, 255, 255, 255));</string>
+         </property>
+         <property name="text">
+          <string>Вікові обмеження
+• Клієнт має бути старше 23 років;
+• Стаж водій повинен становити мінімум 2 роки.
+
+Якщо водій не відповідає цим вимогам, компанія може запропонувати збільшення суми застави.
+Необхідні документи
+• Паспорт
+• Посвідчення водія
+• ІПН (для громадян України)
+</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_3">
+         <property name="styleSheet">
+          <string notr="true">font: 12pt &quot;Segoe UI&quot;;</string>
+         </property>
+         <property name="text">
+          <string>Умови пробігу
+Добовий ліміт з пробігу – 300 км він вважається сумарно за весь термін оренди, але не більше 4500 км на місяць.
+У разі перепробігу кожен кілометр оплачується додатково згідно з тарифами компанії.
+Орендар може замовити послугу «Безлімітний пробіг», щоб не обмежувати себе за кілометри.
+</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_4">
+         <property name="styleSheet">
+          <string notr="true">font: 12pt &quot;Segoe UI&quot;;</string>
+         </property>
+         <property name="text">
+          <string>Застава (депозит)
+Разом із оплатою оренди клієнт зобов'язаний внести депозит (заставу) за автомобіль. Він має бути внесений за допомогою банківської картки. 
+Зверніть увагу, що гроші з картки не знімаються, а лише блокуються.
+Після закінчення терміну оренди та за відсутності порушень договору клієнт отримує всю суму застави назад. Розмір застави залежить від класу автомобіля.
+</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_5">
+         <property name="styleSheet">
+          <string notr="true">font: 12pt &quot;Segoe UI&quot;;</string>
+         </property>
+         <property name="text">
+          <string>ВАЖЛИВО!
+Рекомендуємо оренду з повним страхуванням.
+
+Хто може керувати орендованим транспортним засобом?
+За кермом орендованого авто знаходиться лише водій, який вписаний у договір і має посвідчення з підтвердженням права на керування автомобілем цієї категорії.
+</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_6">
+         <property name="styleSheet">
+          <string notr="true">font: 12pt &quot;Segoe UI&quot;;
+</string>
+         </property>
+         <property name="text">
+          <string>ВАЖЛИВО!
+Ви можете замовити послугу “Додатковий водій” і не обмежувати себе в одному водії.
+Видача та повернення автомобіля
+Видача автомобіля можлива:
+• за адресою клієнта (послуга платна);
+• видача у неробочий час (з 18:00 до 9:00) оплачується додатково.
+Автомобіль видається у чистому вигляді та з повним баком палива.
+</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_7">
+         <property name="styleSheet">
+          <string notr="true">font: 12pt &quot;Segoe UI&quot;;</string>
+         </property>
+         <property name="text">
+          <string>ВАЖЛИВО!
+Автомобіль видається з повним баком та повертається клієнтом з повним баком.
+
+Територія пересування
+Клієнти нашої компанії мають право вільно використовувати орендовані автомобілі по території України, 
+крім Донецької, Луганської, Миколаївської, Херсонської та АР Крим.
+Виїзд за кордон можливий, тільки до країн ЄС.
+
+Скасування бронювання
+Ви можете безкоштовно змінити / скасувати своє бронювання.
+</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
