@@ -35,6 +35,8 @@ void Autopark::loadCars()
     // Встановлюємо таблицю для перегляду
     ui->carTableView->setModel(model);
 
+     ui->carTableView->hideColumn(0);
+
     // Забороняємо редагування
     ui->carTableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
 }
@@ -189,10 +191,10 @@ void Autopark::on_pbOrderCar_clicked() {
 
     int row = selectedIndexes.first().row();
     QSqlTableModel *carModel = static_cast<QSqlTableModel*>(ui->carTableView->model());
-    QString carName = carModel->data(carModel->index(row, 0)).toString();
+    QString carName = carModel->data(carModel->index(row, 1)).toString();
 
     // Перевіряємо, чи автомобіль доступний для оренди
-    QString availability = carModel->data(carModel->index(row, 9)).toString();
+    QString availability = carModel->data(carModel->index(row, 10)).toString();
     if (availability == "Недоступний") {
         QMessageBox::warning(this, "Помилка", "Цей автомобіль вже орендований.");
         return;

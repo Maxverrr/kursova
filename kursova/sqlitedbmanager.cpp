@@ -61,8 +61,8 @@ bool SQLiteDBManager::createTables() {
     // Створення таблиці для автомобілів
     QString createCarsTableQuery = R"(
         CREATE TABLE IF NOT EXISTS Cars (
-
-            name TEXT PRIMARY KEY,
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            name TEXT UNIQUE,
             bodyType TEXT,
             carType TEXT,
             engineVolume REAL,
@@ -203,10 +203,10 @@ bool SQLiteDBManager::addClient(const QString &phoneNumber, const QString &email
     return updateCarAvailability(rentedCarName, "Недоступний");
 }
 
-bool SQLiteDBManager::updateCarAvailability(const QString &carName, const QString &availability) {
+bool SQLiteDBManager::updateCarAvailability(const QString &rentedCarName, const QString &availability) {
     QSqlQuery query;
-    query.prepare("UPDATE Cars SET isAvailable = :availability WHERE name = :carName");
-    query.bindValue(":carName", carName);
+    query.prepare("UPDATE Cars SET isAvailable = :availability WHERE id = :id"); //дороби
+    query.bindValue(":carName", ca); // дороби
     query.bindValue(":availability", availability);
 
     if (!query.exec()) {

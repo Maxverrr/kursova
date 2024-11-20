@@ -28,6 +28,12 @@
   <layout class="QGridLayout" name="gridLayout">
    <item row="2" column="10">
     <widget class="QPushButton" name="pbResetClientsTable">
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(0, 0, 0);
+font: 900 8pt &quot;Arial Black&quot;;
+color: rgb(255, 255, 255);
+</string>
+     </property>
      <property name="text">
       <string>Очистити таблицю з клієнтами</string>
      </property>
@@ -35,9 +41,6 @@
    </item>
    <item row="1" column="7">
     <spacer name="horizontalSpacer_3">
-     <property name="orientation">
-      <enum>Qt::Orientation::Horizontal</enum>
-     </property>
      <property name="sizeHint" stdset="0">
       <size>
        <width>40</width>
@@ -48,6 +51,12 @@
    </item>
    <item row="4" column="4">
     <widget class="QPushButton" name="pbResetTable">
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(0, 0, 0);
+font: 900 8pt &quot;Arial Black&quot;;
+color: rgb(255, 255, 255);
+</string>
+     </property>
      <property name="text">
       <string>Очистити таблицю</string>
      </property>
@@ -55,9 +64,6 @@
    </item>
    <item row="1" column="3">
     <spacer name="horizontalSpacer_2">
-     <property name="orientation">
-      <enum>Qt::Orientation::Horizontal</enum>
-     </property>
      <property name="sizeHint" stdset="0">
       <size>
        <width>40</width>
@@ -68,6 +74,12 @@
    </item>
    <item row="4" column="0">
     <widget class="QPushButton" name="pbAddCar">
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(0, 0, 0);
+font: 900 8pt &quot;Arial Black&quot;;
+color: rgb(255, 255, 255);
+</string>
+     </property>
      <property name="text">
       <string>Створити</string>
      </property>
@@ -75,6 +87,12 @@
    </item>
    <item row="0" column="10">
     <widget class="QPushButton" name="pbShowClients">
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(0, 0, 0);
+font: 900 8pt &quot;Arial Black&quot;;
+color: rgb(255, 255, 255);
+</string>
+     </property>
      <property name="text">
       <string>Переглянути список клієнтів</string>
      </property>
@@ -94,6 +112,11 @@
        <height>30</height>
       </size>
      </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(0, 0, 0);
+font: 900 12pt &quot;Arial Black&quot;;
+color: rgb(255, 255, 255);</string>
+     </property>
      <property name="text">
       <string>Всі автомобілі</string>
      </property>
@@ -101,9 +124,6 @@
    </item>
    <item row="1" column="1">
     <spacer name="horizontalSpacer">
-     <property name="orientation">
-      <enum>Qt::Orientation::Horizontal</enum>
-     </property>
      <property name="sizeHint" stdset="0">
       <size>
        <width>40</width>
@@ -113,10 +133,20 @@
     </spacer>
    </item>
    <item row="3" column="0" colspan="10">
-    <widget class="QTableView" name="carTableView"/>
+    <widget class="QTableView" name="carTableView">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+    </widget>
    </item>
    <item row="4" column="2">
     <widget class="QPushButton" name="pbDeleteCar">
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(0, 0, 0);
+font: 900 8pt &quot;Arial Black&quot;;
+color: rgb(255, 255, 255);
+</string>
+     </property>
      <property name="text">
       <string>Видалити</string>
      </property>
@@ -144,7 +174,7 @@
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton{
-	border-image: url(E:/kursova/luxury.png);
+	border-image: url(D:/KN321/MaxBrydun/kursova/luxury.png);
 }
 </string>
      </property>
@@ -175,7 +205,7 @@
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton{
-	border-image: url(E:/kursova/sedan.png);
+	border-image: url(D:/KN321/MaxBrydun/kursova/sedan.png);
 }
 </string>
      </property>
@@ -206,7 +236,7 @@
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton{
-	border-image: url(E:/kursova/eco.png);
+	border-image: url(D:/KN321/MaxBrydun/kursova/eco.png);
 }
 </string>
      </property>
@@ -237,7 +267,7 @@
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton{
-	border-image: url(E:/kursova/suv.png);
+	border-image: url(D:/KN321/MaxBrydun/kursova/suv.png);
 }
 </string>
      </property>
@@ -248,9 +278,6 @@
    </item>
    <item row="1" column="5">
     <spacer name="horizontalSpacer_4">
-     <property name="orientation">
-      <enum>Qt::Orientation::Horizontal</enum>
-     </property>
      <property name="sizeHint" stdset="0">
       <size>
        <width>40</width>
@@ -284,6 +311,11 @@ color: rgb(255, 255, 255);
        <width>0</width>
        <height>30</height>
       </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(0, 0, 0);
+font: 900 10pt &quot;Arial Black&quot;;
+color: rgb(255, 255, 255);</string>
      </property>
      <property name="text">
       <string>Замовити</string>
