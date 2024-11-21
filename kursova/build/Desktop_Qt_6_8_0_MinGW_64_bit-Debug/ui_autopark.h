@@ -79,7 +79,7 @@ public:
         pbSUV->setMinimumSize(QSize(120, 120));
         pbSUV->setSizeIncrement(QSize(1, 1));
         pbSUV->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"	border-image: url(E:/kursova/suv.png);\n"
+"	border-image: url(:/img/img/SUV.png);\n"
 "}\n"
 ""));
 
@@ -101,7 +101,7 @@ public:
         pbEco->setMinimumSize(QSize(120, 120));
         pbEco->setSizeIncrement(QSize(1, 1));
         pbEco->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"	border-image: url(E:/kursova/eco.png);\n"
+"	border-image: url(:/img/img/Eco.png);\n"
 "}\n"
 ""));
 
@@ -114,7 +114,7 @@ public:
         pbSedan->setMinimumSize(QSize(120, 120));
         pbSedan->setSizeIncrement(QSize(1, 1));
         pbSedan->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"	border-image: url(E:/kursova/sedan.png);\n"
+"	border-image: url(:/img/img/Sedan.png);\n"
 "}\n"
 ""));
 
@@ -127,7 +127,7 @@ public:
         pbBiznes->setMinimumSize(QSize(120, 120));
         pbBiznes->setSizeIncrement(QSize(1, 1));
         pbBiznes->setStyleSheet(QString::fromUtf8("QPushButton{\n"
-"	border-image: url(E:/kursova/luxury.png);\n"
+"	border-image: url(:/img/img/Luxury.png);\n"
 "}\n"
 ""));
 

@@ -6,6 +6,7 @@ debug/mainwindow.o
 debug/rules.o
 debug/sqlitedbmanager.o
 debug/support.o
+debug/qrc_resource.o
 debug/moc_addcardialog.o
 debug/moc_addclientdialog.o
 debug/moc_autopark.o

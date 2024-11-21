@@ -22,14 +22,14 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_pbmain_clicked()
 {
-    this->setStyleSheet("QMainWindow{ border-image: url(E:/kursova/mainwindow.jpg) }");
+    this->setStyleSheet("QMainWindow{ border-image: url(:/img/img/mainwindow.jpg) }");
     ui->stackedWidget->setCurrentIndex(0);
 }
 
 void MainWindow::on_pbAutopark_clicked()
 {
     this->setStyleSheet("QMainWindow{ border-image: '' }");
-    this->setStyleSheet("QMainWindow{ border-image: url(E:/kursova/autopark.png) }");
+    this->setStyleSheet("QMainWindow{ border-image: url(:/img/img/autopark.png) }");
     ui->stackedWidget->setCurrentIndex(1);
 
 }
@@ -37,15 +37,16 @@ void MainWindow::on_pbAutopark_clicked()
 
 void MainWindow::on_pbsupport_clicked()
 {
-   this->setStyleSheet("QMainWindow{ border-image: url(E:/kursova/support.jpg) }");
+   this->setStyleSheet("QMainWindow{ border-image: url(:/img/img/support.jpg) }");
    ui->stackedWidget->setCurrentIndex(2);
 }
+
 
 
 void MainWindow::on_pbRules_clicked()
 {
     this->setStyleSheet("QMainWindow{ border-image: '' }");
-    this->setStyleSheet("QMainWindow{ border-image: url(E:/kursova/rules.jpg) }");
+    this->setStyleSheet("QMainWindow{ border-image: url(:/img/img/rules.jpg) }");
     ui->stackedWidget->setCurrentIndex(3);
 }
 

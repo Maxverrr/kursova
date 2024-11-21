@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/img">
+        <file>img/autopark.png</file>
+        <file>img/Eco.png</file>
+        <file>img/icono.PNG</file>
+        <file>img/Luxury.png</file>
+        <file>img/mainwindow.jpg</file>
+        <file>img/rules.jpg</file>
+        <file>img/Sedan.png</file>
+        <file>img/support.jpg</file>
+        <file>img/SUV.png</file>
+    </qresource>
+</RCC>

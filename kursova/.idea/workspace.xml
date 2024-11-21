@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="58647341-c2f0-4654-844a-bbbf061d6011" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../build-kursova-Desktop_Qt_6_2_1_MinGW_64_bit-Debug/.qmake.stash" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build-kursova-Desktop_Qt_6_2_1_MinGW_64_bit-Debug/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build-kursova-Desktop_Qt_6_2_1_MinGW_64_bit-Debug/Makefile.Debug" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build-kursova-Desktop_Qt_6_2_1_MinGW_64_bit-Debug/Makefile.Release" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build-kursova-Desktop_Qt_6_2_1_MinGW_64_bit-Debug/db.sqlite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build-kursova-Desktop_Qt_6_2_1_MinGW_64_bit-Debug/debug/addcardialog.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build-kursova-Desktop_Qt_6_2_1_MinGW_64_bit-Debug/debug/addclientdialog.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build-kursova-Desktop_Qt_6_2_1_MinGW_64_bit-Debug/debug/autopark.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build-kursova-Desktop_Qt_6_2_1_MinGW_64_bit-Debug/debug/kursova.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build-kursova-Desktop_Qt_6_2_1_MinGW_64_bit-Debug/debug/kursova_resource_res.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build-kursova-Desktop_Qt_6_2_1_MinGW_64_bit-Debug/debug/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build-kursova-Desktop_Qt_6_2_1_MinGW_64_bit-Debug/debug/mainwindow.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build-kursova-Desktop_Qt_6_2_1_MinGW_64_bit-Debug/debug/moc_addcardialog.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build-kursova-Desktop_Qt_6_2_1_MinGW_64_bit-Debug/debug/moc_addcardialog.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build-kursova-Desktop_Qt_6_2_1_MinGW_64_bit-Debug/debug/moc_addclientdialog.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build-kursova-Desktop_Qt_6_2_1_MinGW_64_bit-Debug/debug/moc_addclientdialog.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build-kursova-Desktop_Qt_6_2_1_MinGW_64_bit-Debug/debug/moc_autopark.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build-kursova-Desktop_Qt_6_2_1_MinGW_64_bit-Debug/debug/moc_autopark.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build-kursova-Desktop_Qt_6_2_1_MinGW_64_bit-Debug/debug/moc_mainwindow.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build-kursova-Desktop_Qt_6_2_1_MinGW_64_bit-Debug/debug/moc_mainwindow.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build-kursova-Desktop_Qt_6_2_1_MinGW_64_bit-Debug/debug/moc_predefs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build-kursova-Desktop_Qt_6_2_1_MinGW_64_bit-Debug/debug/moc_rules.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build-kursova-Desktop_Qt_6_2_1_MinGW_64_bit-Debug/debug/moc_rules.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build-kursova-Desktop_Qt_6_2_1_MinGW_64_bit-Debug/debug/moc_support.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build-kursova-Desktop_Qt_6_2_1_MinGW_64_bit-Debug/debug/moc_support.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build-kursova-Desktop_Qt_6_2_1_MinGW_64_bit-Debug/debug/moc_suv.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build-kursova-Desktop_Qt_6_2_1_MinGW_64_bit-Debug/debug/moc_suv.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build-kursova-Desktop_Qt_6_2_1_MinGW_64_bit-Debug/debug/rules.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build-kursova-Desktop_Qt_6_2_1_MinGW_64_bit-Debug/debug/sqlitedbmanager.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build-kursova-Desktop_Qt_6_2_1_MinGW_64_bit-Debug/debug/support.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build-kursova-Desktop_Qt_6_2_1_MinGW_64_bit-Debug/debug/suv.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build-kursova-Desktop_Qt_6_2_1_MinGW_64_bit-Debug/kursova_resource.rc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build-kursova-Desktop_Qt_6_2_1_MinGW_64_bit-Debug/object_script.kursova.Debug" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build-kursova-Desktop_Qt_6_2_1_MinGW_64_bit-Debug/object_script.kursova.Release" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build-kursova-Desktop_Qt_6_2_1_MinGW_64_bit-Debug/ui_addcardialog.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build-kursova-Desktop_Qt_6_2_1_MinGW_64_bit-Debug/ui_addclientdialog.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build-kursova-Desktop_Qt_6_2_1_MinGW_64_bit-Debug/ui_autopark.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build-kursova-Desktop_Qt_6_2_1_MinGW_64_bit-Debug/ui_mainwindow.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build-kursova-Desktop_Qt_6_2_1_MinGW_64_bit-Debug/ui_rules.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build-kursova-Desktop_Qt_6_2_1_MinGW_64_bit-Debug/ui_support.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../build-kursova-Desktop_Qt_6_2_1_MinGW_64_bit-Debug/ui_suv.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/.qmake.stash" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Makefile.Debug" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/Makefile.Release" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/autopark.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/cars.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/clients.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/db.sqlite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/debug/addcardialog.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/debug/addclientdialog.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/debug/autopark.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/debug/kursova.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/debug/main.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/debug/mainwindow.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/debug/moc_addcardialog.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/debug/moc_addcardialog.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/debug/moc_addclientdialog.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/debug/moc_addclientdialog.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/debug/moc_autopark.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/debug/moc_autopark.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/debug/moc_mainwindow.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/debug/moc_mainwindow.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/debug/moc_predefs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/debug/moc_rules.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/debug/moc_rules.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/debug/moc_support.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/debug/moc_support.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/debug/moc_suv.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/debug/moc_suv.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/debug/object_script.kursova.Debug" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/debug/rules.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/debug/sqlitedbmanager.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/debug/support.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/debug/suv.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/logfile.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/release/object_script.kursova.Release" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/ui_addcardialog.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/ui_addclientdialog.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/ui_autopark.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/ui_mainwindow.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/ui_rules.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/ui_support.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/ui_suv.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Desktop_Qt_6_8_0_MinGW_64_bit-Debug/your_database.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kursova.pro.user" beforeDir="false" afterPath="$PROJECT_DIR$/kursova.pro.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kursova.pro.user.67fb00f" beforeDir="false" afterPath="$PROJECT_DIR$/kursova.pro.user.67fb00f" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kursova.pro.user.d2d2832" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="2pAEw7Aad2cHdZgCvmJSB5CcjpU" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-22-openjdk-22-4caba194b151-f504ca98" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="58647341-c2f0-4654-844a-bbbf061d6011" name="Changes" comment="" />
+      <created>1732200717303</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1732200717303</updated>
+      <workItem from="1732200718954" duration="806000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

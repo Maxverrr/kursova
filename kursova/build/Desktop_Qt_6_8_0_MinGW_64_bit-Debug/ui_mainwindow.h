@@ -52,7 +52,7 @@ public:
             MainWindow->setObjectName("MainWindow");
         MainWindow->resize(1270, 714);
         MainWindow->setStyleSheet(QString::fromUtf8("QMainWindow{\n"
-"	border-image: url(E:/kursova/mainwindow.jpg);\n"
+"	border-image: url(:/img/img/mainwindow.jpg);\n"
 "}\n"
 ""));
         centralwidget = new QWidget(MainWindow);
@@ -72,6 +72,7 @@ public:
         verticalLayout->setObjectName("verticalLayout");
         stackedWidget = new QStackedWidget(centralwidget);
         stackedWidget->setObjectName("stackedWidget");
+        stackedWidget->setStyleSheet(QString::fromUtf8(""));
         page = new QWidget();
         page->setObjectName("page");
         page->setStyleSheet(QString::fromUtf8("QMainWindow{\n"
@@ -99,12 +100,12 @@ public:
         label->setSizeIncrement(QSize(0, 0));
         label->setBaseSize(QSize(32, 18));
         label->setStyleSheet(QString::fromUtf8("QLabel{\n"
-"border-image: url(E:/kursova/icono.png);\n"
+"border-image: url(:/img/img/icono.PNG);\n"
 "}\n"
 "\n"
 ""));
         label->setMidLineWidth(0);
-        label->setPixmap(QPixmap(QString::fromUtf8("../icono.PNG")));
+        label->setPixmap(QPixmap(QString::fromUtf8("img/icono.PNG")));
         label->setScaledContents(false);
 
         horizontalLayout->addWidget(label);

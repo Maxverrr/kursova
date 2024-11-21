@@ -6,6 +6,7 @@ release/mainwindow.o
 release/rules.o
 release/sqlitedbmanager.o
 release/support.o
+release/qrc_resource.o
 release/moc_addcardialog.o
 release/moc_addclientdialog.o
 release/moc_autopark.o

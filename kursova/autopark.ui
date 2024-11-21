@@ -73,7 +73,7 @@ color: rgb(255, 255, 255);
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton{
-	border-image: url(E:/kursova/suv.png);
+	border-image: url(:/img/img/SUV.png);
 }
 </string>
      </property>
@@ -117,7 +117,7 @@ color: rgb(255, 255, 255);
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton{
-	border-image: url(E:/kursova/eco.png);
+	border-image: url(:/img/img/Eco.png);
 }
 </string>
      </property>
@@ -148,7 +148,7 @@ color: rgb(255, 255, 255);
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton{
-	border-image: url(E:/kursova/sedan.png);
+	border-image: url(:/img/img/Sedan.png);
 }
 </string>
      </property>
@@ -179,7 +179,7 @@ color: rgb(255, 255, 255);
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton{
-	border-image: url(E:/kursova/luxury.png);
+	border-image: url(:/img/img/Luxury.png);
 }
 </string>
      </property>
