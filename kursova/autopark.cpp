@@ -76,7 +76,7 @@ void Autopark::on_pbDeleteCar_clicked()
 
     int row = selectedIndexes.first().row();
     QSqlTableModel *model = static_cast<QSqlTableModel*>(ui->carTableView->model());
-    QString carName = model->data(model->index(row, 0)).toString();
+    QString carName = model->data(model->index(row, 1)).toString();
 
     if (dbManager->removeCar(carName)) {
         QMessageBox::information(this, "Успіх", "Автомобіль успішно видалено!");

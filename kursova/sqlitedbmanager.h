@@ -27,7 +27,7 @@ public:
     bool addClient(const QString &phoneNumber, const QString &email, const QString &firstName,
                    const QString &surname, const QString &middleName, const QString &rentedCarName);
 
-    bool updateCarAvailability(const QString &rentedCarName, const QString& availability);
+    bool updateCarAvailability(const QString &carName, const QString& availability);
 
 
 private:

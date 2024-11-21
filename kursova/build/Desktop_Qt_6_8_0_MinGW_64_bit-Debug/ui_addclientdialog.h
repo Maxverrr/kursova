@@ -123,7 +123,7 @@ public:
 
     void retranslateUi(QDialog *AddClientDialog)
     {
-        AddClientDialog->setWindowTitle(QCoreApplication::translate("AddClientDialog", "Dialog", nullptr));
+        AddClientDialog->setWindowTitle(QCoreApplication::translate("AddClientDialog", "\320\227\320\260\320\274\320\276\320\262\320\273\320\265\320\275\320\275\321\217", nullptr));
         label->setText(QCoreApplication::translate("AddClientDialog", "\320\235\320\276\320\274\320\265\321\200 \321\202\320\265\320\273\320\265\321\204\320\276\320\275\321\203", nullptr));
         pbAcceptClient->setText(QCoreApplication::translate("AddClientDialog", "PushButton", nullptr));
         label_2->setText(QCoreApplication::translate("AddClientDialog", "\320\225\320\273\320\265\320\272\321\202\321\200\320\276\320\275\320\275\320\260 \320\277\320\276\321\210\321\202\320\260", nullptr));

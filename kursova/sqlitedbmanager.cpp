@@ -203,10 +203,10 @@ bool SQLiteDBManager::addClient(const QString &phoneNumber, const QString &email
     return updateCarAvailability(rentedCarName, "Недоступний");
 }
 
-bool SQLiteDBManager::updateCarAvailability(const QString &rentedCarName, const QString &availability) {
+bool SQLiteDBManager::updateCarAvailability(const QString &carName, const QString &availability) {
     QSqlQuery query;
-    query.prepare("UPDATE Cars SET isAvailable = :availability WHERE id = :id"); //дороби
-    query.bindValue(":carName", ca); // дороби
+    query.prepare("UPDATE Cars SET isAvailable = :availability WHERE name = :carName"); //дороби
+    query.bindValue(":carName", carName); // дороби
     query.bindValue(":availability", availability);
 
     if (!query.exec()) {

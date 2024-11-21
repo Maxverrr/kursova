@@ -48,7 +48,7 @@ public:
         scrollArea->setWidgetResizable(true);
         scrollAreaWidgetContents = new QWidget();
         scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 1216, 1026));
+        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 1216, 1027));
         verticalLayout = new QVBoxLayout(scrollAreaWidgetContents);
         verticalLayout->setObjectName("verticalLayout");
         label = new QLabel(scrollAreaWidgetContents);
@@ -61,7 +61,7 @@ public:
         label_2 = new QLabel(scrollAreaWidgetContents);
         label_2->setObjectName("label_2");
         label_2->setStyleSheet(QString::fromUtf8("font: 12pt \"Segoe UI\";\n"
-"color: qlineargradient(spread:pad, x1:0.453, y1:0.46, x2:1, y2:1, stop:0 rgba(0, 0, 0, 255), stop:0.403315 rgba(255, 255, 255, 255));"));
+""));
 
         verticalLayout->addWidget(label_2);
 

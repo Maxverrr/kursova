@@ -185,7 +185,7 @@ public:
 
     void retranslateUi(QDialog *AddCarDialog)
     {
-        AddCarDialog->setWindowTitle(QCoreApplication::translate("AddCarDialog", "Dialog", nullptr));
+        AddCarDialog->setWindowTitle(QCoreApplication::translate("AddCarDialog", "\320\224\320\276\320\264\320\260\321\202\320\270 \320\260\320\262\321\202\320\276\320\274\320\276\320\261\321\226\320\273\321\214", nullptr));
         label_2->setText(QCoreApplication::translate("AddCarDialog", "\320\235\320\260\320\262\320\267\320\262\320\260 \321\202\320\260 \320\274\320\276\320\264\320\265\320\273\321\214", nullptr));
         label_3->setText(QCoreApplication::translate("AddCarDialog", "\320\242\320\270\320\277 \320\272\321\203\320\267\320\276\320\262\321\203", nullptr));
         bodyTypeCombo->setItemText(0, QCoreApplication::translate("AddCarDialog", "\320\262\320\270\320\261\321\200\320\260\321\202\320\270", nullptr));
