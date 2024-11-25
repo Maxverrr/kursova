@@ -62,16 +62,16 @@ bool SQLiteDBManager::createTables() {
     QString createCarsTableQuery = R"(
         CREATE TABLE IF NOT EXISTS Cars (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            name TEXT UNIQUE,
-            bodyType TEXT,
-            carType TEXT,
-            engineVolume REAL,
-            horsepower INTEGER,
-            fuelType TEXT,
-            fuelConsumption REAL,
-            color TEXT,
-            rentalPrice REAL,
-            isAvailable TEXT
+            "Назва" TEXT UNIQUE,
+            "Тип кузову" TEXT,
+            "Клас" TEXT,
+            "Об'єм мотору" REAL,
+            "К-сть кінських сил" INTEGER,
+            "Тип палива" TEXT,
+            "Розхід палива" REAL,
+            "Колір" TEXT,
+            "Ціна за добу" REAL,
+            "Статус" TEXT
         )
     )";
 
@@ -84,12 +84,12 @@ bool SQLiteDBManager::createTables() {
     // Створення таблиці для клієнтів
     QString createClientsTableQuery = R"(
         CREATE TABLE IF NOT EXISTS Clients (
-            phoneNumber TEXT PRIMARY KEY,
-            email TEXT,
-            firstName TEXT,
-            surname TEXT,
-            middleName TEXT,
-            rentedCarName TEXT,
+            "Номер телефону" TEXT PRIMARY KEY,
+            "Email" TEXT,
+            "Ім'я" TEXT,
+            "Прізвище" TEXT,
+            "По-батькові" TEXT,
+            "rentedCarName" TEXT,
             FOREIGN KEY (rentedCarName) REFERENCES Cars(name)
         )
     )";
@@ -114,19 +114,19 @@ bool SQLiteDBManager::addCar(const QString &name, const QString &bodyType, const
 
     QSqlQuery query;
     query.prepare(R"(
-        INSERT INTO Cars (name, bodyType, carType, engineVolume, horsepower, fuelType, fuelConsumption, color, rentalPrice, isAvailable)
-        VALUES (:name, :bodyType, :carType, :engineVolume, :horsepower, :fuelType, :fuelConsumption, :color, :rentalPrice, :isAvailable)
-    )");
+     INSERT INTO Cars ("Назва", "Тип кузову", "Клас", "Тип палива", "Об'єм мотору", "К-сть кінських сил", "Розхід палива", "Колір", "Ціна за добу", "Статус")
+     VALUES (:name, :bodyType, :carType, :fuelType, :engineVolume, :horsepower, :fuelConsumption, :color, :rentalPrice, :isAvailable)
+)");
 
-    query.bindValue(":name", name);  // Приклад: "1"
-    query.bindValue(":bodyType", bodyType);  // Приклад: "Універсал"
-    query.bindValue(":carType", carType);  // Приклад: "Економ клас"
-    query.bindValue(":engineVolume", engineVolume);  // Приклад: 1 (REAL)
-    query.bindValue(":horsepower", horsepower);  // Приклад: 1 (INTEGER)
-    query.bindValue(":fuelType", fuelType);  // Приклад: "Дизель"
-    query.bindValue(":fuelConsumption", fuelConsumption);  // Приклад: 1 (REAL)
-    query.bindValue(":color", color);  // Приклад: "blue"
-    query.bindValue(":rentalPrice", rentalPrice);  // Приклад: 1 (REAL)
+    query.bindValue(":name", name);
+    query.bindValue(":bodyType", bodyType);
+    query.bindValue(":carType", carType);
+    query.bindValue(":engineVolume", engineVolume);
+    query.bindValue(":horsepower", horsepower);
+    query.bindValue(":fuelType", fuelType);
+    query.bindValue(":fuelConsumption", fuelConsumption);
+    query.bindValue(":color", color);
+    query.bindValue(":rentalPrice", rentalPrice);
     query.bindValue(":isAvailable", isAvailable);
 
     qDebug() << "Inserting car with values:"
@@ -143,13 +143,11 @@ bool SQLiteDBManager::addCar(const QString &name, const QString &bodyType, const
     return true;
 }
 
-
-
 bool SQLiteDBManager::removeCar(const QString &carName)
 {
     QSqlQuery query;
 
-    query.prepare("DELETE FROM Cars WHERE name = :car_name");
+    query.prepare("DELETE FROM Cars WHERE \"Назва\" = :car_name");
     query.bindValue(":car_name", carName);
     if (!query.exec()) {
         qWarning() << "Failed to delete car:" << query.lastError().text();
@@ -183,9 +181,9 @@ bool SQLiteDBManager::addClient(const QString &phoneNumber, const QString &email
 
     QSqlQuery query;
     query.prepare(R"(
-        INSERT INTO Clients (phoneNumber, email, firstName, surname, middleName, rentedCarName)
-        VALUES (:phoneNumber, :email, :firstName, :surname, :middleName, :rentedCarName)
-    )");
+    INSERT INTO Clients ("Номер телефону", "Email", "Ім'я", "Прізвище", "По-батькові", "rentedCarName")
+    VALUES (:phoneNumber, :email, :firstName, :surname, :middleName, :rentedCarName)
+)");
 
     query.bindValue(":phoneNumber", phoneNumber);
     query.bindValue(":email", email);
@@ -205,8 +203,8 @@ bool SQLiteDBManager::addClient(const QString &phoneNumber, const QString &email
 
 bool SQLiteDBManager::updateCarAvailability(const QString &carName, const QString &availability) {
     QSqlQuery query;
-    query.prepare("UPDATE Cars SET isAvailable = :availability WHERE name = :carName"); //дороби
-    query.bindValue(":carName", carName); // дороби
+    query.prepare("UPDATE Cars SET \"Статус \" = :availability WHERE \"Назва\" = :carName");
+    query.bindValue(":carName", carName);
     query.bindValue(":availability", availability);
 
     if (!query.exec()) {

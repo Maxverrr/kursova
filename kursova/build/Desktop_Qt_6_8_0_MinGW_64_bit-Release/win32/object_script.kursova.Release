@@ -1,0 +1,15 @@
+win32/addcardialog.o
+win32/addclientdialog.o
+win32/autopark.o
+win32/main.o
+win32/mainwindow.o
+win32/rules.o
+win32/sqlitedbmanager.o
+win32/support.o
+win32/qrc_resource.o
+win32/moc_addcardialog.o
+win32/moc_addclientdialog.o
+win32/moc_autopark.o
+win32/moc_mainwindow.o
+win32/moc_rules.o
+win32/moc_support.o

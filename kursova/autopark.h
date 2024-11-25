@@ -1,6 +1,5 @@
 #ifndef AUTOPARK_H
 #define AUTOPARK_H
-
 #include <QDialog>
 #include "sqlitedbmanager.h"
 

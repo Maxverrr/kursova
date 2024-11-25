@@ -1,5 +1,4 @@
 #include "mainwindow.h"
-
 #include <QApplication>
 #include <QSqlDatabase>
 #include <QDebug>
@@ -17,14 +16,9 @@ void checkSQLiteDriver() {
 
 int main(int argc, char *argv[]) {
     QApplication a(argc, argv);
-
-    // Перевірка доступності драйвера
     checkSQLiteDriver();
-
-    // Ваш код для роботи з базою даних
     SQLiteDBManager* dbManager = SQLiteDBManager::getInstance();
     dbManager->connectToDataBase();
-
     MainWindow w;
     w.show();
     return a.exec();

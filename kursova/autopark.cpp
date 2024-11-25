@@ -7,6 +7,7 @@
 #include <QMessageBox>
 #include <QInputDialog>
 
+
 Autopark::Autopark(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Autopark)
@@ -29,13 +30,11 @@ void Autopark::loadCars()
     model->setTable("cars");
     model->select();
 
-    // Задати стратегію для заборони редагування
-    model->setEditStrategy(QSqlTableModel::OnManualSubmit);
 
-    // Встановлюємо таблицю для перегляду
+
     ui->carTableView->setModel(model);
-
      ui->carTableView->hideColumn(0);
+
 
     // Забороняємо редагування
     ui->carTableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
@@ -86,7 +85,7 @@ void Autopark::on_pbDeleteCar_clicked()
     }
 }
 
-// Фыльтри
+// Фільтри
 
 void Autopark::on_pbAll_clicked() {
     // Отримуємо модель, підключену до carTableView
@@ -114,7 +113,7 @@ void Autopark::on_pbSUV_clicked() {
     model->setTable("Cars");
 
     // Встановлюємо фільтр за типом кузову SUV
-    model->setFilter("bodyType = 'SUV'");
+    model->setFilter("\"Тип кузову\" = 'SUV'");
     model->select();
 
     // Налаштовуємо таблицю для відображення відфільтрованих даних
@@ -125,7 +124,7 @@ void Autopark::on_pbSedan_clicked(){
     QSqlTableModel *model = new QSqlTableModel(this, dbManager->getDB());
     model->setTable("Cars");
 
-    model->setFilter("bodyType = 'Седан'");
+    model->setFilter("\"Тип кузову\" = 'Седан'");
     model->select();
 
     ui->carTableView->setModel(model);
@@ -135,7 +134,7 @@ void Autopark::on_pbBiznes_clicked(){
     QSqlTableModel *model = new QSqlTableModel(this, dbManager->getDB());
     model->setTable("Cars");
 
-    model->setFilter("carType = 'Бізнес клас'");
+    model->setFilter("\"Клас\" = 'Бізнес клас'");
     model->select();
 
     ui->carTableView->setModel(model);
@@ -146,7 +145,7 @@ void Autopark::on_pbEco_clicked(){
     QSqlTableModel *model = new QSqlTableModel(this, dbManager->getDB());
     model->setTable("Cars");
 
-    model->setFilter("carType = 'Економ клас'");
+    model->setFilter("\"Клас\" = 'Економ клас'");
     model->select();
 
     ui->carTableView->setModel(model);

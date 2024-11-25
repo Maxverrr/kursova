@@ -1,6 +1,5 @@
 #ifndef SQLITEDBMANAGER_H
 #define SQLITEDBMANAGER_H
-
 #include <QSqlDatabase>
 #include <QString>
 
@@ -10,7 +9,6 @@ public:
 
     // Метод для отримання екземпляру даного класу (патерн Singleton)
     static SQLiteDBManager* getInstance();
-
 
     bool connectToDataBase();
     void closeDataBase();
@@ -23,7 +21,6 @@ public:
     bool removeCar(const QString &carName);
     bool dropTable(const QString &tableName);
 
-    // Додаємо оголошення методу addClient
     bool addClient(const QString &phoneNumber, const QString &email, const QString &firstName,
                    const QString &surname, const QString &middleName, const QString &rentedCarName);
 
