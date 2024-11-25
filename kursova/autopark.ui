@@ -345,6 +345,9 @@ color: rgb(255, 255, 255);</string>
    </item>
    <item row="3" column="0" colspan="10">
     <widget class="QTableView" name="carTableView">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
      <property name="styleSheet">
       <string notr="true"/>
      </property>

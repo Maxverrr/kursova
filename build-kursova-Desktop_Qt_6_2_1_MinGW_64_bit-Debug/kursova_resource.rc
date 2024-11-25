@@ -1,6 +1,6 @@
 #include <windows.h>
 
-IDI_ICON1	ICON	"D:\\KN321\\MaxBrydun\\kursova\\kursova\\iconb1.ico"
+IDI_ICON1	ICON	"D:\\KN321\\MaxBrydun\\kursova\\kursova\\caricon.ico"
 
 VS_VERSION_INFO VERSIONINFO
 	FILEVERSION 0,0,0,0

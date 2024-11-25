@@ -33,8 +33,9 @@ void Autopark::loadCars()
 
 
     ui->carTableView->setModel(model);
-     ui->carTableView->hideColumn(0);
+    ui->carTableView->hideColumn(0);
 
+    ui->carTableView->horizontalHeader()->setSectionResizeMode(5, QHeaderView::Stretch);
 
     // Забороняємо редагування
     ui->carTableView->setEditTriggers(QAbstractItemView::NoEditTriggers);

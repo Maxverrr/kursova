@@ -33,7 +33,7 @@ IDC           = idc
 IDL           = midl
 ZIP           = zip -r -9
 DEF_FILE      = 
-RES_FILE      = 
+RES_FILE      = win32\kursova_resource_res.o
 SED           = $(QMAKE) -install sed
 MOVE          = move
 SUBTARGETS    =  \
@@ -213,7 +213,8 @@ Makefile: ../kursova/kursova.pro C:/Qt/6.2.1/mingw81_64/mkspecs/win32-g++/qmake.
 		C:/Qt/6.2.1/mingw81_64/lib/Qt6Sql.prl \
 		C:/Qt/6.2.1/mingw81_64/lib/Qt6Core.prl \
 		C:/Qt/6.2.1/mingw81_64/lib/Qt6EntryPoint.prl \
-		C:/Qt/6.2.1/mingw81_64/mkspecs/features/build_pass.prf
+		C:/Qt/6.2.1/mingw81_64/mkspecs/features/build_pass.prf \
+		../kursova/resource.qrc
 	$(QMAKE) -o Makefile ..\kursova\kursova.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 C:/Qt/6.2.1/mingw81_64/mkspecs/features/spec_pre.prf:
 C:/Qt/6.2.1/mingw81_64/mkspecs/features/device_config.prf:
@@ -359,6 +360,7 @@ C:/Qt/6.2.1/mingw81_64/lib/Qt6Sql.prl:
 C:/Qt/6.2.1/mingw81_64/lib/Qt6Core.prl:
 C:/Qt/6.2.1/mingw81_64/lib/Qt6EntryPoint.prl:
 C:/Qt/6.2.1/mingw81_64/mkspecs/features/build_pass.prf:
+../kursova/resource.qrc:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ..\kursova\kursova.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 
